@@ -233,13 +233,14 @@ document.addEventListener("DOMContentLoaded", () => {
         img.alt = entry.id || "";
         item.appendChild(img);
       } else if (hero.type === "video") {
-        // 🔥 영상 단독인 경우: 비디오 첫 프레임을 썸네일처럼 보여주기
         const video = document.createElement("video");
         video.src = normalizePath(hero.src);
         video.muted = true;
         video.playsInline = true;
         video.preload = "metadata";
         video.className = "gallery-video-thumb";
+        const thumb = hero.thumbnail || "img/video-thumb-default.jpg";
+        video.setAttribute("poster", normalizePath(thumb));
         item.appendChild(video);
       }
 
