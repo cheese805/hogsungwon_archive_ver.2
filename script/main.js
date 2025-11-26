@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== 감도 설정 (숫자 높을수록 둔감해짐) =====
   const WHEEL_THRESHOLD = 80;   // 마우스 휠
-  const TOUCH_THRESHOLD = 70;   // 터치 스와이프
+  const TOUCH_THRESHOLD = 90;   // 터치 스와이프
   const SNAP_LOCK       = 700;  // ms, 한 번 스냅 후 잠금 시간
 
   const snapTo = (index) => {
