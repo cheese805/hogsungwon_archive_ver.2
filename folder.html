@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folder | Hongsungwon Archive</title>
+  <link rel="stylesheet" href="style/folderstyle.css" />
+</head>
+<body>
+  <main class="folder-page">
+
+    <!-- 상단 타이틀 -->
+    <header class="folder-header">
+      <div class="title-container">
+        <h1 class="title">Folder</h1>
+      </div>
+    </header>
+    <!-- 안내 문구 -->
+    <section class="folder-notice">
+      <!-- 경고 아이콘 이미지 -->
+      <img src="img/notice.png" alt="안내" class="notice-icon" />
+      <p class="notice-text">
+        홍성원 배우 ver 정산판 이미지입니다.<br />
+        개인적인 기록 및 참고용으로만 사용해주세요:&rpar;
+      </p>
+    </section>
+
+    <!-- 폴더 리스트 -->
+    <section class="folder-list">
+
+      <!-- 개와 고양이의 시간 -->
+      <a class="folder-item" href="folder/2025개와고양이의시간.png" download>
+        <span class="folder-name">개와 고양이의 시간</span>
+        <!-- 다운로드 아이콘 이미지 -->
+        <img src="img/download.png" alt="이미지 저장" class="folder-download-icon" />
+      </a>
+
+      <!-- 번 더 위치 -->
+      <a class="folder-item" href="folder/2025번더위치.png" download>
+        <span class="folder-name">번 더 위치</span>
+        <img src="img/download.png" alt="이미지 저장" class="folder-download-icon" />
+      </a>
+
+      <!-- 데카브리 -->
+      <a class="folder-item" href="folder/2025데카브리.png" download>
+        <span class="folder-name">데카브리</span>
+        <img src="img/download.png" alt="이미지 저장" class="folder-download-icon" />
+      </a>
+
+    </section>
+
+    <!-- 하단 문구 -->
+    <footer class="folder-footer">
+      <p>a fan-made page for Hongsungwon</p>
+    </footer>
+
+  </main>
+      <!-- 메뉴팝업 -->
+      <div class="global-fab">
+      <button class="global-fab-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="img/menu.png" class="global-fab-icon-img" alt="menu">
+      </button>
+
+      <nav class="global-fab-panel" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="profile.html">Profile</a>
+        <a href="archive.html">Archive</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="folder.html">Folder</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+
+    <script>
+
+      const fabRoot   = document.querySelector(".global-fab");
+      const fabBtn    = fabRoot ? fabRoot.querySelector(".global-fab-btn")   : null;
+      const fabPanel  = fabRoot ? fabRoot.querySelector(".global-fab-panel") : null;
+
+      function closeFab(){
+        if (!fabRoot || !fabBtn) return;
+        fabRoot.classList.remove("open");
+        fabBtn.setAttribute("aria-expanded", "false");
+      }
+
+      function toggleFab(){
+        if (!fabRoot || !fabBtn) return;
+        const willOpen = !fabRoot.classList.contains("open");
+        fabRoot.classList.toggle("open", willOpen);
+        fabBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      }
+
+      if (fabBtn){
+        fabBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleFab();
+        });
+      }
+
+      // 화면 다른 곳 클릭 시 닫기 (갤러리 오버레이랑 별개)
+      document.addEventListener("click", (e) => {
+        if (!fabRoot || !fabPanel || !fabBtn) return;
+        if (fabRoot.contains(e.target)) return; // 메뉴 내부 클릭이면 유지
+        closeFab();
+      });
+
+      // ESC로 닫기 (갤러리 상세 오버레이 우선, 그 다음 메뉴)
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape"){
+          // 상세 오버레이가 이미 처리하고 있으면 그쪽에 맡기고,
+          // 메뉴만 열려 있는 상황이면 여기서 닫힘
+          if (fabRoot && fabRoot.classList.contains("open")){
+            closeFab();
+          }
+        }
+      });
+
+    </script>
+</body>
+</html>

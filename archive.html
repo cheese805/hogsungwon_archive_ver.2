@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive | Hongsungwon Archive</title>
+  <link rel="stylesheet" href="style/archivestyle.css" />
+</head>
+<body>
+  <main class="archive-page">
+
+    <!-- 상단 타이틀 -->
+    <header class="archive-header">
+      <div class="title-container">
+        <h1 class="title">Archive</h1>
+        <div class="title-line"></div>
+      </div>
+    </header>
+
+    <!-- 필터 영역 -->
+    <section class="archive-filter">
+
+      <div class="filter-layout">
+        <img src="img/filter.png" class="filter-icon" />
+
+        <div class="filter-lines">
+
+          <!-- 🔥 연도 한 줄(여기 안에 전부!) -->
+          <div class="filter-line-years">
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2019">2019</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2021">2021</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2022">2022</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2023">2023</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2024">2024</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2025">2025</button>
+            <button class="filter-btn" data-filter-type="year" data-filter-value="2026">2026</button>
+          </div>
+
+          <!-- 장르 -->
+          <div class="filter-line-genres">
+            <button class="filter-btn" data-filter-type="genre" data-filter-value="뮤지컬">뮤지컬</button>
+            <button class="filter-btn" data-filter-type="genre" data-filter-value="연극">연극</button>
+            <button class="filter-btn" data-filter-type="genre" data-filter-value="드라마">드라마</button>
+            <button class="filter-btn" data-filter-type="genre" data-filter-value="드라마">기타</button>
+          </div>
+
+          <!-- 조회 -->
+          <div class="filter-line-submit">
+            <button class="filter-submit" id="filter-apply-btn">조회</button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- 아래 구분선 -->
+      <hr class="filter-divider" />
+
+    </section>
+
+
+    <!-- 카드 리스트 -->
+    <section class="archive-list" id="archive-list">
+
+      <!-- 엑스칼리버 -->
+      <article class="archive-card"
+               data-year="2019"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/excalibur.jpg" alt="엑스칼리버 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">엑스칼리버</h3>
+            <p class="card-period">2019. 06. 15 - 08. 04</p>
+            <p class="card-venue">세종문화회관 대극장</p>
+            <p class="card-role">학생 앙상블</p>
+          </div>
+        </div>
+
+        <!-- 상세 카드 (모달용) -->
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/excalibur.jpg" alt="엑스칼리버 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">엑스칼리버</h2>
+                <p class="detail-period">2019. 06. 15 - 08. 04</p>
+                <p class="detail-role">학생 앙상블</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 돈키호테 미치거나 즐기거나 -->
+      <article class="archive-card"
+               data-year="2021"
+               data-genre="연극">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/donqui_poster.jpg" alt="돈키호테 미치거나 즐기거나 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">돈키호테 미치거나 즐기거나</h3>
+            <p class="card-period">2021. 12. 08 - 12. 11</p>
+            <p class="card-venue">일터소극장</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/donqui_poster.jpg" alt="돈키호테 미치거나 즐기거나 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">연극</p>
+                <h2 class="detail-title">돈키호테 미치거나 즐기거나</h2>
+                <p class="detail-period">2021. 12. 08 - 12. 11</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://www.instagram.com/reel/CXGVCOorIx0/?utm_source=ig_web_button_share_sheet"
+                  target="_blank">
+                  - 홍보영상 part.1 인간들의 이야기
+                </a>
+                <a href="https://www.instagram.com/reel/CXI8EtuvrGA/?utm_source=ig_web_button_share_sheet"
+                  target="_blank">
+                  - 홍보영상 part.2 돈키호테의 책속안에 인물들
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 미드나잇 : 액터뮤지션 (1) -->
+      <article class="archive-card"
+               data-year="2022"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/midnight1_poster.jpg" alt="미드나잇 : 액터뮤지션 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">미드나잇 : 액터뮤지션</h3>
+            <p class="card-period">2022. 03. 02 - 05. 30</p>
+            <p class="card-venue">예그린씨어터</p>
+            <p class="card-role">플레이어 3</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/midnight1_poster.jpg" alt="미드나잇 : 액터뮤지션 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">미드나잇 : 액터뮤지션</h2>
+                <p class="detail-period">2022. 03. 02 - 05. 30</p>
+                <p class="detail-role">플레이어 3</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+         <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/midnight1_profile.jpg">
+              </div>
+         </div>
+
+            </section>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/7wjum4_MVZE?si=Wyag3zJ_PoiLchGb" target="_blank">
+                  - [2022 미드나잇:액터뮤지션]<br> 프로필 촬영 스케치 영상 공개!</a>
+                <a href="https://youtu.be/Mk4uYczdDqo?si=T3K9KYU6B12zGEWA" target="_blank">
+                  - [2022 미드나잇:액터뮤지션]<br> 프로필 촬영 현장 스케치 공개!</a>
+                <a href="https://youtu.be/57qkl1r_WIg?si=WfCWKESaqVXxha7a" target="_blank">
+                  - [2022 미드나잇:액터뮤지션]<br> 캐릭터 티저 공개!</a>
+                <a href="https://youtu.be/inTbBssBI0c?si=UOUvhh6hUIoEvArj" target="_blank">
+                  - [2022 미드나잇:액터뮤지션]<br> 드레스리허설 비하인드 영상 공개!</a>
+                <a href="https://youtu.be/nhQRsbkv1RM?si=elTIO7N5GBJK0srJ" target="_blank">
+                  - [2022 미드나잇:액터뮤지션]<br> 극장 안내멘트 비하인드 영상 공개!</a>
+                <a href="https://www.youtube.com/live/HwHTSWlBazI?si=pzqXPpodQW0iMMtn" target="_blank">
+                  - 220210 | 뮤지컬 미드나잇 <br>:액터뮤지션 티켓오픈 플레이어3들이 끝내주게 보내버리겠어!
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+            <!-- 미드나잇 : 액터뮤지션 (2) -->
+      <article class="archive-card"
+               data-year="2022"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/midnight2_poster.jpg" alt="미드나잇 : 액터뮤지션 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">미드나잇 : 액터뮤지션</h3>
+            <p class="card-period">2022. 12. 5 - 12. 31</p>
+            <p class="card-venue">이화여고 100주년 기념관</p>
+            <p class="card-role">맨</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/midnight2_poster.jpg" alt="미드나잇 : 액터뮤지션 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">미드나잇 : 액터뮤지션</h2>
+                <p class="detail-period">2022. 12. 5 - 12. 31</p>
+                <p class="detail-role">맨</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+         <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/midnight2_profile.jpg">
+              </div>
+            </div>
+
+            </section>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/s46vH_tikhI?si=Y2rXwgoZXGvXT8gt" target="_blank">
+                -[2022 미드나잇:액터뮤지션]<br>뉴캐스트 프로필 촬영 스케치 영상 공개!</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 결투 -->
+      <article class="archive-card"
+               data-year="2023"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/kyultu_poster.jpg" alt="결투 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">결투</h3>
+            <p class="card-period">2023. 02. 05 ~ 04. 17</p>
+            <p class="card-venue">드림아트센터 2관</p>
+            <p class="card-role">취선 외</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/kyultu_poster.jpg" alt="결투 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">결투</h2>
+                <p class="detail-period">2023. 02. 05. ~ 04. 17</p>
+                <p class="detail-role">취선 외</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/kyultu_profile.jpg" alt="">
+              </div>
+            </div>
+
+            </section>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/lwcz1JKiw9U?si=sYD2uXOy7uJlZgsh" target="_blank">
+                  뮤지컬 결투 강호입문 후일담</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 더픽션  -->
+      <article class="archive-card"
+               data-year="2023"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/thefiction_poster.jpg" alt="더픽션 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">더 픽션</h3>
+            <p class="card-period">2023. 06. 23 ~ 09. 17</p>
+            <p class="card-venue">예스24스테이지 1관</p>
+            <p class="card-role">휴 대커</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/thefiction_poster.jpg" alt="더픽션 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">더 픽션</h2>
+                <p class="detail-period">2023. 06. 23 ~ 09. 17</p>
+                <p class="detail-role">휴 대커</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/thefiction_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230627post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230916post.jpg">
+              </div>
+            </div>
+
+            </section>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://www.youtube.com/watch?v=whPKh81u6m8" target="_blank">
+                - 2023 더 픽션 스페셜 티저 공개!</a>
+                <a href="https://www.youtube.com/watch?si=uhYWBTNIAPi9vS4E&v=pzIxHCQv-74&feature=youtu.be" target="_blank">
+                - 2023 뮤지컬 더 픽션 캐릭터 소개 영상 공개</a>
+                <a href="https://youtu.be/_QYorc-D85w?si=SCjXU3hQOTiWxe12" target="_blank">
+                - 2023 뮤지컬 더 픽션 휴 대커 인터뷰 영상 공개!</a>
+                <a href="https://youtu.be/VP7xtGQV9-s?si=DjTiouj-0pGi1p2G" target="_blank">
+                - [글림TV] 홍성원 뮤지컬 "더 픽션" 프로필 촬영 비하인드</a>
+                <a href="https://www.youtube.com/live/8F3Y__Vkex4?si=HqGL4iG-jWtVPDBf" target="_blank">
+                - 뮤지컬 [더 픽션] 연습실 라이브</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 오즈(1) -->
+      <article class="archive-card"
+               data-year="2023"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/oz1_poster.jpg" alt="오즈 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">오즈</h3>
+            <p class="card-period">2023. 07. 11 ~ 09. 17</p>
+            <p class="card-venue">TOM 2관</p>
+            <p class="card-role">양철</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/oz1_poster.jpg" alt="오즈 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">오즈</h2>
+                <p class="detail-period">2023. 07. 11 ~ 09. 17</p>
+                <p class="detail-role">양철</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/oz1_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230619post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230917post.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/Z6j7G1w94pY?si=-vH2aUGJZ-RYYy9u"  target="_blank">
+                - 뮤지컬 오즈 캐스트 소개 🤖</a>
+                <a href="https://youtu.be/gNgA-n_8UmE?si=d1qtHPv08qTUhjln" target="_blank">
+                - 뮤지컬 오즈 미니인터뷰 - AI 양철&버튼📹</a>
+                <a href="https://youtu.be/irHQ4o5UI5c?si=BQDt_sShMGTWtnWA" target="_blank">
+                - 뮤지컬 오즈 연습 현장 스케치🤖</a>
+                <a href="https://youtu.be/ZPQhZYV_O5s?si=RdeKA4Ax7RtvHklz" target="_blank">
+                - 뮤지컬 오즈 성원 양철 오프닝 멘트 🎮</a>
+                <a href="https://www.youtube.com/live/OH01NMqvjeY?si=bD2kETqhGW7GRE4C" target="_blank">
+                - 뮤지컬 [오즈] 연습실 라이브</a>
+                <a href="https://youtu.be/32-wMhdtim8?si=lQhCFurtt2rK7kIO" target="_blank">
+                - 뮤지컬 오즈 하이라이트 영상👾</a>
+                <a href="https://youtu.be/le-CftmD_Oo?si=W-U0iG-rmxhhpJRW" target="_blank">
+                - [글림TV] 강찬, 윤은오, 홍성원 뮤지컬 "오즈" 프로필 촬영현장 비하인드</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 블랙메리포핀스  -->
+      <article class="archive-card"
+               data-year="2023"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/black_poster.jpg" alt="블랙메리포핀스 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">블랙메리포핀스</h3>
+            <p class="card-period">2023. 09. 21 ~ 12. 03</p>
+            <p class="card-venue">서경대학교 공연예술센터 스콘 1관</p>
+            <p class="card-role">요나스</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/black_poster.jpg" alt="블랙메리포핀스 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">블랙메리포핀스</h2>
+                <p class="detail-period">2023. 09. 21 ~ 12. 03</p>
+                <p class="detail-role">요나스</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/black_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230922post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/230924post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/231203post.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://www.youtube.com/watch?v=O4I9hKlgs8I" target="_blank">
+                - 2023 블랙메리포핀스_캐스트 티저</a>
+                <a href="https://youtu.be/RbU1ILTTd2s?si=mw6YoFDWggjd5xLB" target="_blank">
+                - 2023 블랙메리포핀스_요나스 엥겔스 인터뷰</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 와이프 -->
+      <article class="archive-card"
+               data-year="2023, 2024"
+               data-genre="연극">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/wife_poster.jpg" alt="와이프 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">와이프</h3>
+            <p class="card-period">2023. 12. 26 ~ 2024. 02. 08</p>
+            <p class="card-venue">LG아트센터 서울 U+ 스테이지</p>
+            <p class="card-role">에릭</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/wife_poster.jpg" alt="와이프 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">연극</p>
+                <h2 class="detail-title">와이프</h2>
+                <p class="detail-period">2023. 12. 26 ~ 2024. 02. 08</p>
+                <p class="detail-role">에릭</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/wife_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/231226post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240208post.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/4kNEmYSfbzs?si=xnDVhJJNpdGD7S_L" target="_blank">
+                - [더뮤지컬] 연극 '와이프' 2023 연습실 공개 하이라이트</a>
+                <a href="https://youtu.be/g5a1JjLQOrE?si=LzlZMEmllOmImC0C" target="_blank">
+                - 2023 연극 '와이프' SPOT</a>
+                <a href="https://youtu.be/keDkONtTcxk?si=AqCWhqXwaW4J9D3q" target="_blank">
+                - 2023 연극 '와이프' CAST</a>
+                <a href="https://youtu.be/-sWFsbrD9LA?si=Zioefq45c8R24Gju" target="_blank">
+                - 2023 연극 '와이프' 하이라이트(연습실ver.)</a>
+                <a href="https://youtu.be/8k6CXogsJck?si=Ld7lg6lmGbnOjPMg" target="_blank">
+                - 2023 연극 '와이프' 하이라이트(무대ver.)</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 은하철도의 밤 -->
+      <article class="archive-card"
+               data-year="2023, 2024"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/enha_poster.jpg" alt="은하철도의밤 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">은하철도의 밤</h3>
+            <p class="card-period">2023. 12. 20 ~ 2024. 03. 03</p>
+            <p class="card-venue">예스24스테이지 1관</p>
+            <p class="card-role">조반니</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/enha_poster.jpg" alt="은하철도의 밤 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">은하철도의 밤</h2>
+                <p class="detail-period">2023. 12. 20 ~ 2024. 03. 03</p>
+                <p class="detail-role">조반니</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/enha_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240302post.jpeg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/231214post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/231213post.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/9oY2IEw04JI?si=LG14KIkTw2ndh01e" target="_blank">
+                - 2023 뮤지컬 [은하철도의 밤]<br> 별자리 맞추기 (홍성원 윤소호)</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 오즈 -->
+      <article class="archive-card"
+               data-year="2024"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/oz2_poster.jpg" alt="오즈 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">오즈</h3>
+            <p class="card-period">2024. 02. 27 ~ 05. 06</p>
+            <p class="card-venue">TOM 2관</p>
+            <p class="card-role">양철</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/oz2_poster.jpg" alt="오즈 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">오즈</h2>
+                <p class="detail-period">2024. 02. 27 ~ 05. 06</p>
+                <p class="detail-role">양철</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/oz2_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240207post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240305post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240506post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240506post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240506post3.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/LzoKyM-3dc4?si=NjAkIZUORBesmMmR" target="_blank">
+                - 2024 뮤지컬 오즈 캐스트 소개 🤖</a>
+                <a href="https://youtu.be/MkMq2jVK0Q8?si=8e_f1P-iIvQJK42a" target="_blank">
+                - 2024 뮤지컬 오즈 밸런스 인터뷰 - 양철&버튼 🤖</a>
+                <a href="https://youtu.be/2u2z8ppdaD0?si=9EwRHQe05reFomhR" target="_blank">
+                - 2024 뮤지컬 오즈 프로필 현장 스케치</a>
+                <a href="https://youtu.be/DLQVNwwuHxw?si=9PnMqXTpRnWjBRW_" target="_blank">
+                - 2024 뮤지컬 오즈 연습실 현장 스케치</a>
+                <a href="https://youtu.be/bGrzO41o1H0?si=f5Y2QoH7kPf0sEhh" target="_blank">
+                - 2024 뮤지컬 '오즈' 하이라이트 영상 🤖</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 비클래스 -->
+      <article class="archive-card"
+               data-year="2024"
+               data-genre="연극">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/bcalss_poster.jpg" alt="비클래스 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">비클래스</h3>
+            <p class="card-period">2024. 02. 20 ~ 05. 06</p>
+            <p class="card-venue">링크아트센터드림 드림2관</p>
+            <p class="card-role">김택상</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/bcalss_poster.jpg" alt="비클래스 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">연극</p>
+                <h2 class="detail-title">비클래스</h2>
+                <p class="detail-period">2024. 02. 20 ~ 05. 06</p>
+                <p class="detail-role">김택상</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/bclass_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240202post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240202post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240221post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240221post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240325post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/240505post.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/7PLt8GVCRBc?si=pwM870gdVzew1dCS" target="_blank">
+                - [비클래스] 스팟 영상</a>
+                <a href="https://youtu.be/6KVjQkbOCpU?si=qHolXb_YFL1fPSLq" target="_blank">
+                - [비클래스] 프로필 촬영장 스케치 영상</a>
+                <a href="https://youtu.be/XlpozC4X3RU?si=w4SzB0kvgy4ExtKE" target="_blank">
+                - [비클래스] 연습실 스케치 영상</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 맥베스 -->
+      <article class="archive-card"
+               data-year="2024"
+               data-genre="연극">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/macbeth_poster.jpg" alt="맥베스 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">맥베스</h3>
+            <p class="card-period">2024. 07. 13 ~ 08. 18</p>
+            <p class="card-venue">국립극장 해오름극장</p>
+            <p class="card-role">멜컴</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/macbeth_poster.jpg" alt="맥베스 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">연극</p>
+                <h2 class="detail-title">맥베스</h2>
+                <p class="detail-period">2024. 07. 13 ~ 08. 18</p>
+                <p class="detail-role">멜컴</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/macbeth_profile.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/Pg_kjptJSBY?si=c0wrIxtQ_VEx4ffs" target="_blank">
+                - 연극〈맥베스〉Sketch Film - 대본 리딩 현장</a>
+                <a href="https://youtu.be/Ss-TlONLPds?si=ZOK01H88WUCplOL_" target="_blank">
+                - 연극〈맥베스〉VIDEO - 1막 7장 Ⅰ</a>
+                <a href="https://www.youtube.com/shorts/CNxpvYpkvwU?si=YYpx9sSr76EH0xOc" target="_blank">
+                - 연극〈맥베스〉𝑻𝒐𝒎𝒐𝒓𝒓𝒐𝒘 𝒂𝒏𝒅 𝑻𝒐𝒎𝒐𝒓𝒓𝒐𝒘 <br> ⋄ 홍성원 (🪕 ⋄ 발랄라이카)</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 클로버 -->
+      <article class="archive-card"
+               data-year="2024, 2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/clover_poster.jpg" alt="클로버 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">클로버</h3>
+            <p class="card-period">2024. 11. 05 ~ 2025. 01. 26</p>
+            <p class="card-venue">대학로 자유극장</p>
+            <p class="card-role">정인</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/clover_poster.jpg" alt="클로버 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">클로버</h2>
+                <p class="detail-period">2024. 11. 05 ~ 2025. 01. 26</p>
+                <p class="detail-role">정인</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/clover_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/241004post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/241014post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/241105post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/241105post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/241112post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250126post1.jpg">
+              </div>
+            </div>
+
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://www.youtube.com/watch?v=pS6r0w7pQ0M" target="_blank">
+                - 2024-25 뮤지컬 '클로버' STORY FILM</a>
+                <a href="https://youtu.be/1LdtwtqHrAw?si=-NuBLTpkGL8Scv0_" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 5자 토크 - 정인</a>
+                <a href="https://youtu.be/YHmw1pJelU8?si=Nc2jHRhvhvEyRBYj" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 10초 PR - 정인</a>
+                <a href="https://youtu.be/3mZE0KPhEvI?si=u-TCRk-8PF2OPPVT" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 넘버 선공개 - M4.클로버 : 정인</a>
+                <a href="https://youtu.be/uqwJZ7-ksWs?si=cu7kZSjYvh71RneM" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 리릭비디오 - M4. 클로버 : 홍성원</a>
+                <a href="https://youtu.be/4E_AAH_W0i0?si=43nBgoXjJHk0PiZU" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 녹음 스튜디오 출퇴근 : 정인</a>
+                <a href="https://youtu.be/SynDAdqupm4?si=krPRkfTnm3L4Jl2w" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 연습실 출퇴근 : 정인</a>
+                <a href="https://youtu.be/ptKQxIqK-PM?si=85uMy-gW7hz5xEVJ" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 연습 현장 스케치</a>
+                <a href="https://youtu.be/0UC4P8bTTKg?si=QDqmQ32Afjs8vNQ3" target="_blank">
+                - 2024-25 뮤지컬 '클로버' 중계 코멘터리 영상</a>
+                <a href="https://youtu.be/nQA3YothiT8?si=mzHxGc_rx4FijOZX" target="_blank">
+                - [글림TV] 강찬, 홍성원, 임태현 "클로버" 프로필 촬영현장 비하인드</a>
+                <a href="https://www.youtube.com/live/xoqxIK4pSXg?si=9HjQjDUUsvD3opDc" target="_blank">
+                - 뮤지컬 클로버 연습실산책 (분위기만 살짝)</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 면면면 -->
+      <article class="archive-card"
+               data-year="2024, 2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/myun_poster.jpg" alt="면면면 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">면면면</h3>
+            <p class="card-period">2024. 12. 01 ~ 12. 16</p>
+            <p class="card-venue">국립정동극장 세실</p>
+            <p class="card-role">항필</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/myun_poster.jpg" alt="면면면 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">면면면</h2>
+                <p class="detail-period">2024. 12. 01 ~ 12. 16</p>
+                <p class="detail-role">항필</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/myun_profile.jpg">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+      <!-- 무명, 준희 -->
+      <article class="archive-card"
+               data-year="2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/mumyung_poster.jpg" alt="무명, 준희 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">무명, 준희</h3>
+            <p class="card-period">2025. 01. 24 - 04. 06</p>
+            <p class="card-venue">링크아트센터드림 드림2관</p>
+            <p class="card-role">이준희</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/mumyung_poster.jpg" alt="무명, 준희 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">무명, 준희</h2>
+                <p class="detail-period">2025. 01. 24 - 04. 06</p>
+                <p class="detail-role">이준희</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/mumyung_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250120post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250124post.jpg">
+              </div>
+            </div>
+
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/pKpYGfrLJ48?si=znhEwE-aQr71y1PU" target="_blank">
+                - ✍ 뮤지컬 [무명, 준희] 무드필름 | 홍성원</a>
+                <a href="https://youtube.com/shorts/7YeX28W2uWI?si=6jnc8Qgai9qXAA9b" target="_blank">
+                - 뮤지컬 [무명, 준희]✍️ 자기소개 영상 공개 - 준희 | #홍성원</a>
+                <a href="https://youtu.be/EexY6zHkhpM?si=9c5DrQ36NDWeP5to" target="_blank">
+                - ✍ 뮤지컬 [무명, 준희] 넘버 선공개 <br> | 홍성원 & 박상준 & 최은영 - M05. 뭔가 있는 느낌 (Piano ver.)</a>
+                <a href="https://youtu.be/9tp6olsQILw?si=CzyoXz5yR0Sd-xlF" target="_blank">
+                - ✍️뮤지컬 [무명, 준희] "온 세상이 내게 말을 걸어" 홍보멘트 영상 공개</a>
+                <a href="https://youtu.be/fw0njJDtiO4?si=LxKkMLa7aHrTIIjN" target="_blank">
+                - ✍뮤지컬 [무명, 준희] 배우진 삼일절 독립선언서 낭독</a>
+                <a href="https://youtu.be/w_Vgx0JRXaQ?si=WYFNeI_twXlg_Pd-" target="_blank">
+                - ✍뮤지컬 [무명, 준희] 종이비행기 대회 | 결과</a>
+                <a href="https://youtube.com/shorts/WatjaGCqqfE?si=ngsuGE5T02aDoF3B" target="_blank">
+                - ✍뮤지컬 [무명, 준희] 마이크테스트 공개 - 준희 | 홍성원</a>
+                <a href="https://youtube.com/shorts/SQqogsoUX-k?si=GOOBpyua0mCvvix7" target="_blank">
+                - 뮤지컬 [무명, 준희] 무대 뒤 일상 | 준희, 정우 편 </a>
+                <a href="https://youtube.com/shorts/OcpOBypP1rE?si=T8Bt36AYLnm5Z13L" target="_blank">
+                - ✍뮤지컬 [무명, 준희] 무대 뒤 일상 | 연희 편</a>
+                <a href="https://youtube.com/shorts/tp66WAh9jvI?si=p_d15zNBWIMW17Us" target="_blank">
+                - 뮤지컬 [무명, 준희] 막공 끝인사 - 준희 | #홍성원 ✍</a>
+                <a href="https://youtu.be/4Qjitmoi6XQ?si=SSI4tk-yuJ1t8jXa" target="_blank">
+                - [글림TV] 홍성원 "무명, 준희" 프로필 촬영현장 비하인드</a>
+                <a href="https://www.youtube.com/live/O4imnpRVmOY?si=R5SS95SRrCjskavc" target="_blank">
+                - 뮤지컬 [무명, 준희] 공부방송 
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 개와 고양이의 시간 -->
+      <article class="archive-card"
+               data-year="2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/catsand_poster.jpg" alt="개와 고양이의 시간 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">개와 고양이의 시간</h3>
+            <p class="card-period">2025. 05. 21 ~ 08. 10</p>
+            <p class="card-venue">더굿씨어터</p>
+            <p class="card-role">랩터</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/catsand_poster.jpg" alt="개와 고양이의 시간 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">개와 고양이의 시간</h2>
+                <p class="detail-period">2025. 05. 21 ~ 08. 10</p>
+                <p class="detail-role">랩터</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/catsand_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250418post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250418post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250522post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250623post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250809post8.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250809post9.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250809post7.png">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/rxNz3AJKoFU?si=piRfFCsgNPyBbbaB" target="_blank">
+                - [개와 고양이의 시간] 랩터 미니 인터뷰</a>
+                <a href="https://youtu.be/VcmHp7augEo?si=YC09Jm2hZuipUCvO" target="_blank">
+                - [개와 고양이의 시간] 프리스비 게임 인터뷰</a>
+                <a href="https://youtu.be/eJK-g5TiQRQ?si=IVY-B4KbSx6Uu6ta" target="_blank">
+                - [개와 고양이의 시간] M8. 개들의 랩소디 - 홍성원, 박좌헌</a>
+                <a href="https://youtu.be/-fJPBgxfsmM?si=SDTkUDNe3NkXM6RZ" target="_blank">
+                - [글림TV] 윤은오, 홍성원 "개와 고양이의 시간" 프로필 촬영현장 비하인드</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 미지의 서울 -->
+      <article class="archive-card"
+               data-year="2025"
+               data-genre="드라마">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/mijiseoul_poster.jpg" alt="미지의 서울 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">미지의 서울</h3>
+            <p class="card-period">2025. 05. 24 ~ 06. 29</p>
+            <p class="card-venue">tvN</p>
+            <p class="card-role">김태이</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/mijiseoul_poster.jpg" alt="미지의 서울 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">드라마</p>
+                <h2 class="detail-title">미지의 서울</h2>
+                <p class="detail-period">2025. 05. 24 ~ 06. 29</p>
+                <p class="detail-role">김태이</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="galleryimg/250617post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250617post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250617post3.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250617post4.jpg">
+              </div>
+            </div>
+
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/5Fpt5VAtVD4?si=KkhxNE6Vp_zaFt72" target="_blank">
+                - [미지의서울] 태이 씨가 미래를 좋아했다고요❓<br>  홍성원이 직접 말해주는 태이의 본심🤭</a>
+                <a href="https://youtu.be/SJiVG_gPbo8?si=KuXLovR7BwFf07CW" target="_blank">
+                - [미지의서울] 태이 씨 아니고 경구 될 뻔한 홍성원😮<br>  태이의 코멘터리, 비하인드까지 하드 털이📽</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 번 더 위치 -->
+      <article class="archive-card"
+               data-year="2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/burnthe_poster.jpg" alt="번 더 위치 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">번 더 위치</h3>
+            <p class="card-period">2025. 07. 08 ~ 10 .12</p>
+            <p class="card-venue">홍익대 대학로 아트센터<br>소극장</p>
+            <p class="card-role">블랭크 & 딜런</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/burnthe_poster.jpg" alt="번 더 위치 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">번 더 위치</h2>
+                <p class="detail-period">2025. 07. 08 ~ 10. 12</p>
+                <p class="detail-role">블랭크 & 딜런</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/burnthe_profile1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="poster/burnthe_profile2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250616post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250616post2.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250708post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250729post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/251012post5.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/TwA_ntLZPp0?si=FI2Mnvj8dB4Nnm0S" target="_blank">
+                - [25 번 더 위치] ❤️‍🔥MAIN TEASER 💫메인 티저</a>
+                <a href="https://youtu.be/Ouwm2bNG1mg?si=KMwAVASfKQ9mxkcJ" target="_blank">
+                - [25 번 더 위치] ❤️‍🔥프로필 현장 스케치</a>
+                <a href="https://youtu.be/0ZeK0iDfMIM?si=Wla4Ozf2LfAkQh2F" target="_blank">
+                - [25 번 더 위치] ❤️‍🔥넘버 미리 듣기 Playlist</a>
+                <a href="https://youtu.be/l-WV8V0mdHQ?si=LfgYJUdC3VKt3qGQ" target="_blank">
+                - [글림TV] 홍성원 "번 더 위치" 프로필 촬영현장 비하인드</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 데카브리 -->
+      <article class="archive-card"
+               data-year="2025"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/deca_poster.jpg" alt="데카브리 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">데카브리</h3>
+            <p class="card-period">2025. 09. 10 ~ 11. 30</p>
+            <p class="card-venue">NOL 서경스퀘어<br>스콘 1관</p>
+            <p class="card-role">아카키</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/deca_poster.jpg" alt="데카브리 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">데카브리</h2>
+                <p class="detail-period">NOL 서경스퀘어 스콘 1관</p>
+                <p class="detail-role">아카키</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/deca_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250804post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250805post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250915post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250927post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/250927post2.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/TQY8p3YM7vY?si=iLR_QR50xd7DLkcx" target="_blank">
+                - [뮤지컬 데카브리] CASTING FILM</a>
+                <a href="https://youtu.be/5Llr5rKkjbs?si=C6ngcZ6g7xjmdwaM" target="_blank">
+                - [뮤지컬 데카브리] 랜덤 인터뷰🖋️ㅣ미하일 아카키 알렉세이</a>
+                <a href="https://youtube.com/shorts/0wTFVV0hQjM?si=uoPs09gcyj653euk" target="_blank">
+                - [뮤지컬 데카브리] 프로필 현장 스케치 공개🖋️</a>
+                <a href="https://youtu.be/x4odVhSrvZo?si=oM1R9sml8MbmRlT3" target="_blank">
+                - [뮤지컬 데카브리] 옅은 빛 MV | 손유동&정휘&신주협&홍성원</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- 캐빈 -->
+      <article class="archive-card"
+               data-year="2025,2026"
+               data-genre="뮤지컬">
+        <button type="button" class="card-more">
+          <div class="card-tab">
+            <img src="img/up.png" alt="" class="tab-icon" />
+            <span>More</span>
+          </div>
+        </button>
+
+        <div class="card-inner">
+          <div class="card-poster">
+            <img src="poster/cabin_poster.jpg" alt="캐빈 포스터" />
+          </div>
+          <div class="card-main">
+            <h3 class="card-title">캐빈</h3>
+            <p class="card-period">2025. 11. 27 ~ 2026. 03. 01</p>
+            <p class="card-venue">et theater 1</p>
+            <p class="card-role">데이</p>
+          </div>
+        </div>
+
+        <div class="archive-detail">
+          <div class="detail-card">
+            <div class="detail-header">
+              <div class="detail-poster">
+                <img src="poster/cabin_poster.jpg" alt="캐빈 포스터" />
+              </div>
+              <div class="detail-main">
+                <p class="detail-genre">뮤지컬</p>
+                <h2 class="detail-title">캐빈</h2>
+                <p class="detail-period">2025. 11. 27 ~ 2026. 03. 01</p>
+                <p class="detail-role">데이</p>
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>PHOTO</h3>
+            <div class="detail-photo-grid">
+              <div class="detail-photo">
+                <img src="poster/cabin_profile.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/251020post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/251029post.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/251124post1.jpg">
+              </div>
+              <div class="detail-photo">
+                <img src="galleryimg/251124post2.jpg">
+              </div>
+            </div>
+
+            <section class="detail-section">
+              <h3>VIDEO</h3>
+              <div class="detail-video-links">
+                <a href="https://youtu.be/B85MSlrj-z8?si=h6PYOWjX3itiexU-" target="_blank">
+                - 뮤지컬 [캐빈] 상견례 스케치 영상🚪</a>
+                <a href="https://youtu.be/R6Ehl1WURds?si=mNcGdurKNAr2MeeP" target="_blank">
+                - 뮤지컬 [캐빈] 밸런스 인터뷰🚪
+                </a>
+                <a href="https://youtu.be/L5WD_Z5tbh8?si=JrHLnvDxJzm5WG5U" target="_blank">
+                - 뮤지컬 [캐빈] 음원 선공개 M5. 새와 화살의 시간
+                </a>
+                <a href="https://youtu.be/vo0-GLOFq-w?si=xuEHpdBHVtFgxhMt" target="_blank">
+                - 뮤지컬 [캐빈] 음원 선공개 M6. 취재파일
+                </a>
+                <a href="https://youtu.be/HrtAFSOPftU?si=9zlAQYvhZZCovDY9" target="_blank">
+                - 뮤지컬 [캐빈]🚪프로필 촬영 현장 스케치
+                </a>
+                <a href="https://youtu.be/MakNQZjJNMw?si=s-Q1QJVsQ61FN-va" target="_blank">
+                - 뮤지컬 [캐빈] 오두막 브이로그 🚪
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+
+
+    </section>
+
+    <p id="no-result" class="no-result-msg" style="display:none;">
+      해당 작품이 존재하지 않습니다.
+    </p>
+
+
+    <!-- 하단 문구 -->
+    <footer class="archive-footer">
+      a fan-made page for Hongsungwon
+    </footer>
+
+    <div class="archive-overlay" id="archive-overlay">
+  <div class="overlay-backdrop"></div>
+</div>
+  </main>
+
+      <!-- 메뉴팝업 -->
+      <div class="global-fab">
+      <button class="global-fab-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="img/menu.png" class="global-fab-icon-img" alt="menu">
+      </button>
+
+      <nav class="global-fab-panel" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="profile.html">Profile</a>
+        <a href="archive.html">Archive</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="folder.html">Folder</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+
+    
+  <script src="script/archivescript.js"></script>
+
+  <!-- 사진 라이트박스 -->
+      <div class="photo-lightbox" id="photo-lightbox" aria-hidden="true">
+        <div class="photo-lightbox-backdrop"></div>
+
+        <div class="photo-lightbox-inner">
+          <img src="img/excit.png" class="lightbox-close" alt="close">
+
+          <!-- 좌측 화살표 -->
+          <button class="lightbox-arrow left-arrow">
+            <img src="img/moreleft.png" alt="prev">
+          </button>
+
+          <!-- 실제 이미지 -->
+          <img id="lightbox-img" src="" alt="">
+
+          <!-- 우측 화살표 -->
+          <button class="lightbox-arrow right-arrow">
+            <img src="img/moreright.png" alt="next">
+          </button>
+
+        </div>
+      </div>
+
+</body>
+</html>

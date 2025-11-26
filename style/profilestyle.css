@@ -1,0 +1,483 @@
+/* ==============================
+   FONT
+   ============================== */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  src: url('font/Pretendard-Thin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  src: url('font/Pretendard-ExtraLight.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  src: url('font/Pretendard-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  src: url('font/Pretendard-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Griffiths';
+  src: url('font/Griffiths.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==============================
+   RESET / BASE
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  overscroll-behavior: contain;
+  overflow: hidden;
+}
+body {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #000;
+  background: #fff;
+}
+
+/* ==============================
+   FULLPAGE WRAPPER
+   ============================== */
+#fullpage-wrapper {
+  height: 100svh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#fullpage-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.section {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: max(env(safe-area-inset-top), 8px);
+  padding-bottom: 20px;
+  background: #fff;
+  position: relative;
+}
+
+/* ==============================
+   TITLE (공통)
+   ============================== */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 가운데 정렬 추가 */
+  width: 100%;
+  max-width: 450px;
+  margin-top: 25px;
+  margin-bottom: -20px;
+  padding: 0 30px;
+}
+
+.title-line {
+  display: none;    /* 선 제거 */
+}
+
+.title-container h1.title {
+  font-family: 'Griffiths', serif;
+  font-size: 2em;
+  font-weight: normal;
+  color: transparent;
+  -webkit-text-stroke: 0.5px #000;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+
+/* ==============================
+   SECTION 1 : PROFILE CARD
+   ============================== */
+.profile-section-inner {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;   
+  align-items: flex-start;  
+  padding-top: 12px;        
+}
+
+.profile-card {
+  position: relative;
+  width: min(360px, calc(100% - 40px));
+  padding: 24px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo-wrap {
+  width: 85%;
+  max-width: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+.profile-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 이름 / 기본 정보 */
+.name-block {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.name-ko {
+  font-size: 1.6rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+}
+.name-en {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #777;
+}
+
+.name-line {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 10px;
+}
+
+.profile-meta {
+  width: 100%;
+  text-align: left;
+  font-size: 0.86rem;
+  font-weight: 300;
+}
+
+.meta-row {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.meta-row span {
+  margin: 0 3px;
+}
+.meta-dot {
+  color: #b0b0b0;
+}
+
+/* 학력/소속사/데뷔 */
+.profile-info-list {
+  padding-left: 4px;
+  list-style: none;
+}
+.profile-info-list li {
+  display: flex;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.profile-info-list .label {
+  width: 60px;
+  flex-shrink: 0;
+  color: #777;
+}
+.profile-info-list .value {
+  flex: 1;
+}
+
+/* ==============================
+   More about Sheet (desktop + mobile)
+   ============================== */
+
+/* 공통 카드 스타일 */
+.more-panel {
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  width: min(280px, calc(100% - 40px));
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+/* ─── Desktop 모드 : 본문 아래에 그냥 놓이는 카드 ─── */
+.profile-card.mode-desktop .more-panel {
+  position: static;
+  width: min(280px, calc(100% - 40px));
+  margin: 16px auto 0;
+  transform: none;
+}
+
+/* ─── Mobile 모드 : bottom sheet (머리만 보였다가 슬라이드업) ─── */
+.profile-card.mode-mobile .more-panel {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  width: min(360px, calc(100% - 40px));
+  transform: translate(-50%, calc(100% - 44px)); /* + More about 줄만 보이게 */
+  transition: transform 0.26s ease-out;
+}
+
+/* 열렸을 때 sheet 전체 올라오기 */
+.profile-card.mode-mobile.is-more-open .more-panel {
+  transform: translate(-50%, 0);
+}
+
+/* 헤더 : + More about */
+.more-toggle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: left;
+}
+
+.more-toggle span {
+  line-height: 1.2;
+}
+
+/* 닫기 버튼 */
+.more-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.more-close img {
+  width: 18px;
+  height: 18px;
+}
+
+/* 데스크탑에서는 닫기버튼 숨김 */
+.profile-card.mode-desktop .more-close {
+  display: none;
+}
+.profile-card.mode-mobile .more-close img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* 내용 영역 */
+.more-panel-inner {
+  padding: 8px 18px 14px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.more-item + .more-item {
+  margin-top: 6px;
+}
+
+.more-label {
+  font-size: 0.78rem;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+.more-value {
+  font-size: 0.8rem;
+}
+
+/* 기본 : 닫힌 상태 (= is-more-open 없음) */
+.profile-card .more-panel {
+  position: fixed;
+  bottom: 24px;
+
+  /* 닫힌 상태에서는 오른쪽으로 거의 다 빼놓고
+     네모 끝부분만 보이게 */
+  left: auto;
+  right: -120px;              /* 👍 네가 마음에 들어한 값 그대로 */
+  width: min(250px, 90vw);
+
+  transform: none;
+  transition: right 0.26s ease-out, transform 0.26s ease-out;
+}
+
+/* 열렸을 때 : 가운데 정렬로 슬라이드업 */
+.profile-card.is-more-open .more-panel {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);   /* 가로 가운데 */
+}
+
+/* 닫혀 있을 때는 내용(Instagram 등)을 숨김 */
+.profile-card:not(.is-more-open) .more-panel-inner {
+  display: none;
+}
+
+/* ==============================
+   SECTION 2 : FILMOGRAPHY
+   ============================== */
+.section-filmography {
+  background: #ffffff;
+}
+
+.filmography-container {
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* 상·좌 패딩 넉넉하게 */
+  padding: 40px 30px 40px 28px;  /* top right bottom left */
+
+  text-align: left;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  margin-top: 50px; 
+}
+.filmography-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* 카테고리 */
+.category-group {
+  margin-bottom: 22px;
+}
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+/* 연도 - 작품 가로 정렬 */
+.list-detail {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.list-detail > li {
+  display: flex;             /* 🔥 연도 + 작품 묶어서 가로로 */
+  align-items: flex-start;
+  gap: 15px;                 /* 연도와 작품 사이 간격 */
+  margin-bottom: 10px;
+}
+
+.list-detail > li > strong {
+  width: 48px;               /* 연도 칼럼 폭 */
+  flex-shrink: 0;
+  font-weight: 300;
+}
+
+.list-detail > li > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;                /* 들여쓰기 없애고 연도 바로 옆에서 시작 */
+}
+
+.list-detail > li > ul > li {
+  margin-bottom: 4px;
+}
+
+
+/* ==============================
+   GLOBAL FAB (다른 페이지와 동일)
+   ============================== */
+.global-fab {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2500;
+  font-family: 'Pretendard', sans-serif;
+}
+.global-fab-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: transparent;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+.global-fab-icon-img {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.global-fab-panel {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 0px 28px rgba(0, 0, 0, 0.16);
+  border: 1px solid #ececec;
+
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 110px;
+  width: fit-content;
+}
+.global-fab.open .global-fab-panel {
+  display: flex;
+}
+.global-fab-panel a {
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #222;
+  padding: 2px 2px;
+}
+.global-fab-panel a:hover {
+  color: #000;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 480px) {
+  .title-container {
+    padding: 0 22px;
+    margin-top: 22px;
+  }
+  .filmography-container {
+    padding: 8px 22px 32px;
+  }
+  .profile-card {
+    width: min(340px, calc(100% - 32px));
+  }
+  .global-fab {
+    left: 14px;
+    bottom: 14px;
+  }
+}

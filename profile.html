@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Hongsungwon Archive</title>
+  <link rel="stylesheet" href="style/profilestyle.css" />
+</head>
+<body>
+
+  <!-- 전체 풀페이지 스크롤 래퍼 -->
+  <main id="fullpage-wrapper">
+
+    <!-- =======================
+         SECTION 1 : PROFILE
+         ======================= -->
+    <section class="section section-profile">
+      <header class="title-container">
+        <h1 class="title">Profile</h1>
+      </header>
+
+      <div class="profile-section-inner">
+        <!-- 가운데 프로필 카드 -->
+        <article class="profile-card">
+          <div class="profile-photo-wrap">
+            <img src="img/profile1.jpg" alt="홍성원 프로필 사진" class="profile-photo" />
+          </div>
+
+          <div class="profile-main">
+            <div class="name-block">
+              <p class="name-ko">홍 성 원</p>
+              <p class="name-en">Hong Sung Won</p>
+            </div>
+
+            <hr class="name-line" />
+
+            <div class="profile-meta">
+              <p class="meta-row">
+                <span>1999.01.24</span>
+                <span class="meta-dot">|</span>
+                <span>177cm</span>
+                <span class="meta-dot">|</span>
+                <span>INFP</span>
+                <span class="meta-dot">|</span>
+                <span>O형</span>
+              </p>
+
+              <ul class="profile-info-list">
+                <li>
+                  <span class="label">학력</span>
+                  <span class="value">서울예술대학교 연기전공</span>
+                </li>
+                <li>
+                  <span class="label">소속사</span>
+                  <span class="value">글림 아티스트</span>
+                </li>
+                <li>
+                  <span class="label">데뷔</span>
+                  <span class="value">2019. 06. 19</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+        
+            <div class="more-panel" id="more-panel" aria-hidden="true">
+            <!-- 헤더 : 항상 보이는 부분 (카드 상단) -->
+            <button type="button" class="more-toggle" id="more-toggle">
+                <span>+ More about</span>
+            </button>
+
+            <!-- 닫기 버튼 -->
+            <button type="button" class="more-close" id="more-close" aria-label="닫기">
+                <img src="img/excit.png" alt="닫기 아이콘">
+            </button>
+
+            <!-- 상세 내용 -->
+            <div class="more-panel-inner">
+                <div class="more-item">
+                <p class="more-label">Instagram</p>
+                <p class="more-value">@sung.won.hong_</p>
+                </div>
+
+                <div class="more-item">
+                <p class="more-label">Online Letter</p>
+                <p class="more-value">hongsungwon.gleam@gmail.com</p>
+                </div>
+            </div>
+            </div>
+
+        </article>
+      </div>
+
+    </section>
+
+    <!-- =======================
+         SECTION 2 : FILMOGRAPHY
+         ======================= -->
+    <section class="section section-filmography">
+      <header class="title-container">
+        <h1 class="title">Filmography</h1>
+        <div class="title-line"></div>
+      </header>
+
+      <!-- 이 박스만 내부 스크롤 / 스크롤바 숨김 -->
+      <div class="filmography-container">
+
+        <!-- 뮤지컬 -->
+        <section class="category-group">
+          <h2 class="category-title">뮤지컬</h2>
+          <ul class="list-detail">
+            <li>
+              <strong>2019</strong>
+              <ul>
+                <li>엑스칼리버</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2022</strong>
+              <ul>
+                <li>미드나잇:액터뮤지션</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2023</strong>
+              <ul>
+                <li>결투</li>
+                <li>더 픽션</li>
+                <li>오즈</li>
+                <li>블랙메리포핀스</li>
+                <li>은하철도의 밤</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2024</strong>
+              <ul>
+                <li>오즈</li>
+                <li>클로버</li>
+                <li>면면면</li>
+              </ul>
+            </li><li>
+              <strong>2025</strong>
+              <ul>
+                <li>무명, 준희</li>
+                <li>개와 고양이의 시간</li>
+                <li>번 더 위치</li>
+                <li>데카브리</li>
+                <li>캐빈</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+
+        <!-- 연극 -->
+        <section class="category-group">
+          <h2 class="category-title">연극</h2>
+          <ul class="list-detail">
+            <li>
+              <strong>2021</strong>
+              <ul>
+                <li>돈키호테 미치거나 즐기거나</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2023</strong>
+              <ul>
+                <li>와이프</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2024</strong>
+              <ul>
+                <li>비클래스</li>
+                <li>맥베스</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 드라마 -->
+        <section class="category-group">
+          <h2 class="category-title">드라마</h2>
+          <ul class="list-detail">
+            <li>
+              <strong>2025</strong>
+              <ul>
+                <li>미지의 서울</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- 위로 올라가는 버튼 -->
+      <button
+        type="button"
+        class="scroll-up-btn"
+        id="scroll-to-profile"
+        data-next-section
+        aria-label="프로필 섹션으로 이동"
+      >
+        <img src="img/scroll_down.png" alt="" class="arrow-icon" />
+      </button>
+    </section>
+
+  </main>
+
+   <!-- 메뉴팝업 -->
+    <div class="global-fab">
+      <button class="global-fab-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="img/menu.png" class="global-fab-icon-img" alt="menu">
+      </button>
+
+      <nav class="global-fab-panel" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="profile.html">Profile</a>
+        <a href="archive.html">Archive</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="folder.html">Folder</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+
+
+  <script src="script/profilescript.js"></script>
+  <script src="script/main.js"></script>
+</body>
+</html>

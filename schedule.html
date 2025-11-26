@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule | Hongsungwon Archive</title>
+  <link rel="stylesheet" href="style/schedulestyle.css">
+</head>
+<body>
+
+  <div class="schedule-page">
+
+    <!-- 상단 타이틀 -->
+    <header class="schedule-header">
+      <div class="title-container">
+        <h1 class="title">Schedule</h1>
+        <div class="title-line"></div>
+      </div>
+    </header>
+
+    <!-- 월 제목 + 전환 버튼 -->
+    <div class="month-header">
+      <button id="prev-month" class="month-btn"></button>
+      <span class="month-title" id="month-year">11월</span>
+      <button id="next-month" class="month-btn"></button>
+    </div>
+
+    <hr class="month-line">
+
+    <!-- 달력 -->
+    <div class="calendar-container">
+      <table class="calendar">
+        <thead>
+          <tr>
+            <th>일</th><th>월</th><th>화</th>
+            <th>수</th><th>목</th><th>금</th><th>토</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+
+    <!-- 일정 상세 -->
+    <div class="event-box" id="event-box">
+      <div class="event-header">
+        <span id="event-title"></span>
+        <button id="close-event" aria-label="닫기"></button>
+      </div>
+      <div class="event-content" id="event-content"></div>
+    </div>
+
+    <!-- 하단 작은 문구 -->
+    <div class="page-footer">
+      a fan-made page for Hongsunwon
+    </div>
+
+  </div>
+      <!-- 메뉴팝업 -->
+      <div class="global-fab">
+      <button class="global-fab-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="img/menu.png" class="global-fab-icon-img" alt="menu">
+      </button>
+
+      <nav class="global-fab-panel" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="profile.html">Profile</a>
+        <a href="archive.html">Archive</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="folder.html">Folder</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+
+
+  <!-- 스크립트 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="/script/schedulescript.js"></script>
+
+</body>
+</html>

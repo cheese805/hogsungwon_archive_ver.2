@@ -1,0 +1,1039 @@
+/* ==============================
+   FONT (folder / info와 동일)
+   ============================== */
+@font-face {
+  font-family:'Pretendard';
+  font-weight:100;
+  src:url('font/Pretendard-Thin.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:200;
+  src:url('font/Pretendard-ExtraLight.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:300;
+  src:url('font/Pretendard-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:400;
+  src:url('font/Pretendard-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Griffiths';
+  src:url('font/Griffiths.woff2') format('woff2');
+  font-weight:normal;
+  font-style:normal;
+}
+
+/* ==============================
+   RESET / BASE
+   ============================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html,body{
+  scrollbar-width: none;      /* 파이어폭스 */
+  -ms-overflow-style: none;   /* IE, Edge */
+  height:100%;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;              /* Webkit (Chrome/Safari/Opera) */
+}
+
+body{
+  font-family:'Pretendard',sans-serif;
+  font-weight:200;
+  line-height:1.3;
+  color:#000;
+  background:#fff;
+}
+
+/* ==============================
+   LAYOUT
+   ============================== */
+.archive-page{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  position:relative;
+  padding-top:max(env(safe-area-inset-top),8px);
+  padding-bottom:48px;
+}
+
+/* ==============================
+   TITLE
+   ============================== */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 가운데 정렬 추가 */
+  width: 100%;
+  max-width: 450px;
+  margin-top: 25px;
+  margin-bottom: 16px;
+  padding: 0 30px;
+}
+
+.title-line {
+  display: none;    /* 선 제거 */
+}
+
+.title-container h1.title {
+  font-family: 'Griffiths', serif;
+  font-size: 2em;
+  font-weight: normal;
+  color: transparent;
+  -webkit-text-stroke: 0.5px #000;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+
+/* ==============================
+   FILTER
+   ============================== */
+
+/* 전체 필터 영역 */
+.archive-filter{
+  width:100%;
+  max-width:450px;
+  padding:0 30px 14px;
+}
+
+/* 아이콘 + 버튼 전체 레이아웃 */
+.filter-layout{
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+}
+
+/* 왼쪽 필터 아이콘 */
+.filter-icon{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  margin-right:8px;
+  margin-top:4px; /* 버튼과 수직 가운데 느낌 맞추기 */
+}
+
+/* 오른쪽 버튼 줄들(연도 / 장르 / 조회) */
+.filter-lines{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:6px; /* 줄 사이 간격 */
+}
+
+/* 연도 한 줄 – 공간 없을 때만 줄바꿈 */
+.filter-line-years{
+  display:flex;
+  flex-wrap:wrap;   /* 강제 줄나누기 없음, 화면 좁으면 자동 줄바꿈 */
+  gap:8px;
+  align-items:center;
+}
+
+/* 장르 한 줄 – 뮤지컬/연극/드라마/기타 */
+.filter-line-genres{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+
+/* 조회 버튼 줄 */
+.filter-line-submit{
+  display:flex;
+  justify-content:flex-start;
+  margin-top:2px;
+}
+
+/* 버튼 공통 스타일 (연도 + 장르 모두) */
+.filter-btn{
+  border:1px solid #dcdcdc;
+  border-radius:20px;
+  background:#fff;
+  font-size:12px;
+  font-weight:300;
+  letter-spacing:0.02em;
+  cursor:pointer;
+  transition: background 0.2s ease,color 0.2s ease,
+             border-color 0.2s ease,transform 0.08s ease;
+
+  /* 크기 통일용 */
+  min-width:65px;
+  height:25px;
+  padding:0 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* hover / active */
+.filter-btn:hover{
+  background:#f5f5f5;
+}
+.filter-btn.active{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+  transform:translateY(1px);
+}
+
+/* 조회 버튼 */
+.filter-submit{
+  border-radius:20px;
+  padding:0 18px;
+  border:1px solid #000;
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  font-weight:300;
+  cursor:pointer;
+  letter-spacing:0.06em;
+
+  height:25px;
+  min-width:65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.filter-submit:active{
+  transform:translateY(1px);
+}
+
+/* 필터 아래 구분선 */
+.filter-divider{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #e5e5e5;
+  margin-top:14px;
+  margin-bottom:10px;
+}
+
+/* ==============================
+   CARD LIST
+   ============================== */
+
+.archive-list{
+  width:100%;
+  max-width:450px;
+  padding:6px 30px 0;
+}
+
+/* 개별 카드 */
+.archive-card{
+  position:relative;
+  width:100%;
+  background:#fff;
+  border-radius:14px;
+  border:1px solid #e3e3e3;
+  box-shadow:0 8px 18px rgba(0,0,0,0.04);
+  padding:20px 16px 16px;
+  margin-top:18px;
+  /*애니메이션*/
+  transition: transform 0.45s cubic-bezier(.19,1,.22,1),
+              box-shadow 0.45s cubic-bezier(.19,1,.22,1);
+
+}
+.archive-card.is-centered{
+  transform: translateY(-25px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* 두 번째 카드부터 윗 카드랑 살짝 겹치게 */
+.archive-card + .archive-card{
+  margin-top:-10px;   /* 겹치는 정도. -10이 적당, 더 겹치고 싶으면 -14 정도로 바꿔봐 */
+}
+
+/* 위에 튀어나오는 More 탭 */
+.card-more{
+  position:absolute;
+  top:-19px;      /* 카드 윗선에서 살짝 위 */
+  left:24px;
+  border:none;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+  z-index:2;
+}
+
+.card-tab{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:3px 15px 3px;
+  border-radius:10px 10px 0 0;
+  border:1px solid #dcdcdc;
+  border-bottom:none;
+  background:#fff;
+  font-size:11px;
+  font-weight:300;
+}
+
+.tab-icon{
+  width:10px;
+  height:10px;
+}
+
+/* 카드 내부 레이아웃 */
+.card-inner{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.card-poster{
+  width:80px;
+  min-width:80px;
+  height:110px;
+  border-radius:6px;
+  overflow:hidden;
+  background:#f0f0f0;
+  flex-shrink:0;
+}
+.card-poster img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.card-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.card-title{
+  font-size:0.96rem;
+  font-weight:400;
+  line-height:1.3;
+  margin-bottom:3px;
+}
+.card-period{
+  font-size:0.75rem;
+  color:#777;
+}
+.card-venue,
+.card-role{
+  font-size:0.78rem;
+  color:#444;
+}
+
+/* 상세내용은 기본 숨김 (확대용 데이터만) */
+.archive-detail{
+  display:none;
+}
+
+
+/* ==============================
+   CARD LIST
+   ============================== */
+.archive-list{
+  width:100%;
+  max-width:450px;
+  padding:6px 30px 0;
+  margin-top: 18px;
+  /* 카드 사이 간격은 카드 쪽에서 margin으로 조절할 거라 gap은 안 씀 */
+}
+
+/* 개별 카드 */
+.archive-card{
+  position:relative;
+  width:100%;
+  background:#fff;
+  border-radius:14px;
+  border:1px solid #e3e3e3;
+  box-shadow:0 8px 18px rgba(0,0,0,0.04);
+  padding:20px 16px 16px;
+
+  /* 첫 카드 기본 위 여백 */
+  margin-top:18px;
+}
+
+/* 두 번째 카드부터 윗 카드랑 살짝 겹치게 */
+.archive-card + .archive-card{
+  margin-top:-10px;   /* 겹치는 정도. -10이 적당, 더 겹치고 싶으면 -14 정도로 바꿔봐 */
+}
+
+/* 위에 튀어나오는 More 탭 */
+.card-more{
+  position:absolute;
+  top:-19px;      /* 카드 윗선에서 살짝 위 */
+  left:24px;
+  border:none;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+  z-index:2;
+}
+
+.card-tab{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:3px 15px 3px;
+  border-radius:10px 10px 0 0;
+  border:1px solid #dcdcdc;
+  border-bottom:none;
+  background:#fff;
+  font-size:11px;
+  font-weight:300;
+}
+
+.tab-icon{
+  width:10px;
+  height:10px;
+}
+
+/* 카드 내부 레이아웃 그대로 */
+.card-inner{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.card-poster{
+  width:80px;
+  min-width:80px;
+  height:110px;
+  border-radius:6px;
+  overflow:hidden;
+  background:#f0f0f0;
+  flex-shrink:0;
+}
+.card-poster img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.card-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.card-title{
+  font-size:0.96rem;
+  font-weight:400;
+  line-height:1.3;
+  margin-bottom:3px;
+}
+.card-period{
+  font-size:0.75rem;
+  color:#777;
+}
+.card-venue,
+.card-role{
+  font-size:0.78rem;
+  color:#444;
+}
+
+/* 상세내용은 기본 숨김 (모달에서만 사용) */
+.archive-detail{
+  display:none;
+}
+
+/* ==============================
+   GLASS DETAIL OVERLAY (More 클릭시)
+   ============================== */
+
+/* 배경 전체를 어둡게 + 살짝 블러 */
+.archive-page.is-blurred {
+  filter: blur(6px);
+  transform: translateZ(0);
+  transition: filter 0.25s ease;
+}
+
+/* 화면 전체 덮는 오버레이 */
+.archive-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 900;
+}
+
+/* 어두운 레이어 + 글래스 블러 */
+.overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  backdrop-filter: blur(3px);
+}
+
+/* 열렸을 때만 활성화 */
+.archive-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================================================
+   상세 카드 (중앙 모달)
+   ========================================================= */
+/* =========================================================
+   WRAPPER : 카드 외곽 박스 (중앙 정렬)
+   ========================================================= */
+/* 중앙 모달 래퍼 */
+.expanded-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px 0;          
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.expanded-wrapper.is-open {
+  opacity: 1;
+}
+
+.expanded-wrapper.is-open {
+  opacity: 1;
+}
+
+/* =========================================================
+   DETAIL CARD : 모달 안의 실제 컨텐츠 박스
+   ========================================================= */
+.expanded-card {
+  position: relative;
+
+  /* ✅ 카드 최대 가로폭 통일 (모바일/PC 공통) */
+  width: min(420px, calc(100% - 40px));
+
+  /* ✅ 화면 안에서만 스크롤되도록 */
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+  padding: 26px 18px 20px;
+
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+  z-index: 10000;
+}
+
+.expanded-card.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 스크롤바 숨김 */
+.expanded-card::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.expanded-card {
+  scrollbar-width: none;
+}
+.expanded-card.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* 스크롤바 숨김 */
+.expanded-card::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.expanded-card {
+  scrollbar-width: none;
+}
+
+
+/* =========================================================
+   CLOSE 버튼 : 우측 상단 X 아이콘 (img/excit.png)
+   ========================================================= */
+.expanded-close-img {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 20x;
+  height: 20px;
+
+  cursor: pointer;
+  object-fit: contain;
+  pointer-events: auto;
+
+  z-index: 10100;  /* 카드 안 어떤 이미지보다 위 */
+}
+
+/* ==============================
+   DETAIL CARD (확대 카드 안 내용)
+   ============================== */
+
+.detail-card {
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detail-header{
+  display:flex;
+  flex-direction: row;   /* 🔥 항상 가로 */
+  align-items: flex-end;
+  gap:14px;
+}
+
+.detail-poster{
+  width:140px;
+  min-width:140px;
+  height:190px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f0f0f0;
+}
+.detail-poster img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.detail-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:4px;
+}
+.detail-genre{
+  font-size:0.75rem;
+  color:#777;
+}
+.detail-title{
+  font-size:1.05rem;
+  font-weight:500;
+}
+.detail-period{
+  font-size:0.8rem;
+  color:#777;
+}
+.detail-role{
+  font-size:0.85rem;
+  margin-top:2px;
+}
+
+/* PHOTO / VIDEO 섹션 */
+.detail-section{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.detail-section h3{
+  font-size:0.8rem;
+  letter-spacing:0.12em;
+  font-weight:400;
+}
+
+/* PHOTO 섹션: 가로 스크롤 한 줄 레일 */
+.detail-photo-grid{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+
+  overflow-x: auto;        /* 가로 스크롤 */
+  overflow-y: hidden;
+  padding-bottom: 6px;     /* 스크롤바 공간 */
+  margin-bottom: 4px;
+
+  -webkit-overflow-scrolling: touch;  /* 모바일 부드럽게 */
+}
+
+/* 썸네일 카드 (세로 높이만 고정) */
+.detail-photo{
+  flex: 0 0 auto;          /* 줄개행 X, 한 줄 유지 */
+  height: 150px;           /* 🔥 원하는 세로 높이 (조절 가능) */
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e9e9e9;
+}
+
+/* 이미지: 세로에 맞추고, 가로는 비율대로 */
+.detail-photo img{
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;    
+}
+
+/* 스크롤바 얇게 스타일 */
+.detail-photo-grid::-webkit-scrollbar{
+  height: 4px;             /* 얇은 가로 스크롤바 */
+}
+.detail-photo-grid::-webkit-scrollbar-track{
+  background: transparent;
+}
+.detail-photo-grid::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.18);
+  border-radius: 999px;
+}
+
+/* 파이어폭스용 대략적인 두께 */
+.detail-photo-grid{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+
+/* 🔥 VIDEO 리스트 영역 */
+.detail-video-links {
+  max-height: 4.8em;      /* 1.6em × 3줄 정도 + 여유 */
+  overflow-y: auto;
+  padding-right: 4px;     /* 스크롤과 텍스트 간격 */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 🔥 글자만 링크 (밑줄 없음, 색 변화 없음) */
+.detail-video-links a {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: inherit;
+  text-decoration: none;
+}
+
+.detail-video-links a:hover,
+.detail-video-links a:active,
+.detail-video-links a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 🔥 스크롤바 얇게 */
+.detail-video-links::-webkit-scrollbar {
+  width: 3px;
+}
+
+.detail-video-links::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+  border-radius: 999px;
+}
+
+.detail-video-links::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox 대응 */
+.detail-video-links {
+  scrollbar-width: thin;
+  scrollbar-color: #dcdcdc transparent;
+}
+
+
+
+/* ==============================
+   PHOTO LIGHTBOX (배경만, 박스 없음)
+   ============================== */
+
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(2px);
+  z-index: 20000;
+}
+
+.photo-lightbox.is-open {
+  display: flex;
+}
+.photo-lightbox-inner {
+  position: relative;
+
+  /* 컨테이너는 크기 강제하지 말고, 가운데 정렬만 담당 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.22),
+    0 0 10px rgba(0,0,0,0.10);
+}
+
+#lightbox-img {
+  /* 🔥 가로를 화면의 60%로 — 세로는 자동(비율 유지) */
+  width: 60vw;
+  height: auto;
+
+  /* 원본보다 커지지 않게 */
+  max-width: 100%;
+  max-height: 90vh;
+
+  object-fit: contain;      /* 비율 유지 */
+  border-radius: 14px;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 22px;
+  height: 22px;
+
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform .15s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.07);
+}
+
+
+@media (max-width: 768px) {
+  #lightbox-img {
+    width: 70vw;   /* 화면 좁아지면 살짝 더 넓게 */
+  }
+}
+
+@media (max-width: 480px) {
+  #lightbox-img {
+    width: 80vw;   /* 아주 작은 화면에선 80%까지 */
+  }
+}
+
+/* ==============================
+   화살표 버튼
+   ============================== */
+.lightbox-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  z-index: 1300;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+  padding: 0;
+  backdrop-filter: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-arrow img{
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.left-arrow{
+  left: -28px;   /* 사진 왼쪽 바깥 */
+}
+
+.right-arrow{
+  right: -28px;  /* 사진 오른쪽 바깥 */
+}
+
+
+/* 좁은 화면 (아이폰 SE 등) 튜닝 */
+@media (max-width: 400px){
+  .photo-lightbox-inner{
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+
+  .lightbox-arrow{
+    width: 28px;
+    height: 28px;
+  }
+
+  .lightbox-arrow img{
+    width: 14px;
+    height: 14px;
+  }
+
+  .left-arrow{ left: 6px; }
+  .right-arrow{ right: 6px; }
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+.archive-footer{
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  font-size:11px;
+  color:#b5b5b5;
+  letter-spacing:0.03em;
+  pointer-events:none;
+}
+
+.expanded-close-tab {
+  position: absolute;
+  top: -22px;
+  left: 18px;
+  padding: 4px 16px 5px;
+  border-radius: 16px 16px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-bottom: none;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 11px;
+  font-weight: 300;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  /* 🔥 절대 가려지지 않도록 설정 */
+  z-index: 99999;
+}
+.expanded-close-icon{
+  font-size: 9px;
+}
+
+
+/* 작품존재하지 않습니다 */
+.no-result-msg{
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 24px;
+  letter-spacing: 0.05em;
+}
+
+
+/* ==============================
+   좌하단 고정 글로벌 메뉴
+   ============================== */
+
+.global-fab{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2500;
+  font-family:'Pretendard', sans-serif;
+}
+
+/* 동그란 버튼 */
+.global-fab-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: transparent;
+  background: #fff;
+  box-shadow: 0 0px 24px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 메뉴 아이콘 (이미지) */
+.global-fab-icon-img{
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* 팝업 패널 */
+.global-fab-panel{
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+  border: 1px solid #ececec;
+
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 110px; /* 🔥 가로폭 확 줄임 */
+  width: fit-content;
+}
+
+.global-fab.open .global-fab-panel{
+  display: flex;
+}
+
+.global-fab-panel a{
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color:#222;
+  padding: 2px 2px;
+}
+
+.global-fab-panel a:hover{
+  color:#000;
+}
+
+/* 모바일에서 버튼 위치 조금만 위로 */
+@media (max-width:480px){
+  .global-fab{
+    left: 14px;
+    bottom: 14px;
+  }
+}
+
+
+/* ==============================
+   RESPONSIVE (모바일 공통)
+   ============================== */
+
+@media (max-width: 480px) {
+  .archive-header,
+  .archive-filter,
+  .archive-list {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .title-container h1.title {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 480px){
+  .card-more{
+    top:-18px;   /* 모바일에서만 더 내려주기 */
+  }
+}

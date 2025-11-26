@@ -1,0 +1,826 @@
+[
+    {
+        "id": "251124_official_stage",
+        "date": "2025-11-24",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 연습 사진"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251124post1.jpg",
+                "/galleryimg/251124post2.jpg"]
+    },
+    {
+        "id": "251118_instagram_post",
+        "date": "2025-11-18",
+        "source": {
+        "owner": "최은영 배우님",
+        "type": "instagram_post",
+        "label": "최은영 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간","무명_준희"],
+        "images": ["/galleryimg/251118post1.jpg",
+                "/galleryimg/251118post2.jpg",
+                "/galleryimg/251118post3.jpg",
+                "/galleryimg/251118post4.jpg",
+                "/galleryimg/251118post5.jpg",
+                "/galleryimg/251118post6.jpg",
+                "/galleryimg/251118post7.jpg",
+                "/galleryimg/251118post8.jpg",
+                "/galleryimg/251118post9.jpg",
+                "/galleryimg/251118post10.jpg",
+                "/galleryimg/251118post11.jpg"]
+    },
+    {
+        "id": "251117_instagram_post",
+        "date": "2025-11-17",
+        "source": {
+        "owner": "정동화 배우님",
+        "type": "instagram_post",
+        "label": "정동화 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간","캐빈"],
+        "images": ["/galleryimg/251117post1.jpg",
+                "/galleryimg/251117post2.jpg"]
+    },
+    {
+        "id": "251108_instagram_story",
+        "date": "2025-11-08",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "instagram_story",
+        "label": "글림아티스트 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["galleryimg/251108story.jpg"]
+    },
+    {
+        "id": "251031_instagram_story",
+        "date": "2025-10-31",
+        "source": {
+        "owner": "하도권 배우님",
+        "type": "instagram_story",
+        "label": "하도권 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간", "캐빈"],
+        "images": ["/galleryimg/251031story.jpg"]
+    },
+    {
+        "id": "251030_instagram_post",
+        "date": "2025-10-30",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "instagram_post",
+        "label": "글림아티스트 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/251030post.jpg"]
+    },
+    {
+        "id": "251029_instagram_story",
+        "date": "2025-10-29",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "instagram_story",
+        "label": "글림아티스트 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/251029story.jpg"]
+    },
+    {
+        "id": "251029_official_stage",
+        "date": "2025-10-29",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 페어컷"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251029post.jpg"]
+    },
+    {
+        "id": "251026_instagram_post",
+        "date": "2025-10-26",
+        "source": {
+        "owner": "한재아 배우님",
+        "type": "instagram_post",
+        "label": "한재아 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간","번_더_위치"],
+        "images": ["/galleryimg/251026post.jpg"]
+    },
+    {
+        "id": "251020_official_stage",
+        "date": "2025-10-20",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 상견례 사진"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251020post.jpg"]
+    },
+    {
+        "id": "251012_official_artist",
+        "date": "2025-10-12",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 번 더 위치 막공사진"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/251012post1.jpg",
+                    "/galleryimg/251012post2.jpg",
+                    "/galleryimg/251012post3.jpg",
+                    "/galleryimg/251012post4.jpg"]
+    },
+    {
+        "id": "251012_official_stage",
+        "date": "2025-10-12",
+        "source": {
+        "owner": "낭만바리케이트",
+        "type": "official_stage",
+        "label": "뮤지컬 번 더 위치 막공사진"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/251012post5.jpg"]
+    },
+    {
+        "id": "250927_official_stage",
+        "date": "2025-09-27",
+        "source": {
+        "owner": "쇼노트",
+        "type": "official_stage",
+        "label": "뮤지컬 데카브리 공연사진"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250927post1.jpg",
+                    "/galleryimg/250927post2.jpg"]
+    },
+        {
+        "id": "250921_instagram_post",
+        "date": "2025-09-21",
+        "source": {
+        "owner": "최은영 배우님",
+        "type": "instagram_post",
+        "label": "최은영 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250921post1.jpg",
+                    "/galleryimg/250921post2.jpg"]
+    },
+    {
+        "id": "250920_instagram_story",
+        "date": "2025-09-20",
+        "source": {
+        "owner": "@vn.yoojin님",
+        "type": "instagram_story",
+        "label": "@vn.yoojin님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250920story.jpg"]
+    },
+    {
+        "id": "250917_press",
+        "date": "2025-09-17",
+        "source": {
+        "owner": "시어터플러스",
+        "type": "press",
+        "label": "시어터플러스 기사 사진"
+        },
+        "tags": ["THEATER_plus"],
+        "images": ["/galleryimg/250917post1.jpg",
+                    "/galleryimg/250917post2.jpg",
+                    "/galleryimg/250917post3.jpg"]
+    },
+    {
+        "id": "250917_instagram_post",
+        "date": "2025-09-17",
+        "source": {
+            "owner": "홍성원 배우님",
+            "type": "instagram_post",
+            "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간"],
+        "media": [
+            { "type": "image", "src": "/galleryimg/250917post3.jpg" },
+            { "type": "image", "src": "/galleryimg/250917post1.jpg" },
+            { "type": "image", "src": "/galleryimg/250917post4.jpg" },
+            { "type": "image", "src": "/galleryimg/250917post5.jpg" },
+            { "type": "image", "src": "/galleryimg/250917post2.jpg" },
+            { "type": "image", "src": "/galleryimg/250917post6.jpg" },
+            { "type": "video", "src": "/galleryimg/250917post7.mp4" }]
+    },
+    {
+        "id": "250915_press",
+        "date": "2025-09-15",
+        "source": {
+        "owner": "스타데일리 뉴스",
+        "type": "press",
+        "label": "스타데일리 뉴스 기사사진"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250915post.jpg"]
+    },
+    {
+        "id": "250913_official_artist",
+        "date": "2025-09-13",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 데카브리 첫공사진"
+        },
+        "tags": ["데카브리"],
+        "media": [
+            { "type": "image", "src": "/galleryimg/250913post1.jpg" },
+            { "type": "image", "src": "/galleryimg/250913post2.jpg" },
+            { "type": "video", "src": "/galleryimg/250913post3.mp4" }]
+    },
+    {
+        "id": "250910_instagram_story",
+        "date": "2025-09-10",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250910story.mp4" }]
+    },
+    {
+        "id": "250910_instagram_post",
+        "date": "2025-09-10",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_post",
+        "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간","Guitar_live"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250910post.mp4" }]
+    },
+    {
+        "id": "250903_instagram_post",
+        "date": "2025-09-03",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_post",
+        "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간","Guitar_live"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250903post.mp4" }]
+    },
+    {
+        "id": "250903_official_stage",
+        "date": "2025-09-03",
+        "source": {
+        "owner": "쇼노트",
+        "type": "official_stage",
+        "label": "뮤지컬 데카브리 연습사진"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250903post.jpg"]
+    },
+    {
+        "id": "250901_instagram_story",
+        "date": "2025-09-01",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간","데카브리"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250901story1.mp4" },
+            { "type": "video", "src": "/galleryimg/250901story2.mp4" },
+            { "type": "video", "src": "/galleryimg/250901story3.mp4" }]
+    },
+    {
+        "id": "250829_instagram_story",
+        "date": "2025-08-29",
+        "source": {
+        "owner": "변희상 배우님",
+        "type": "instagram_story",
+        "label": "변희상 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","데카브리"],
+        "images": ["/galleryimg/250829story.jpg"]
+    },
+    {
+        "id": "250825_instagram_story",
+        "date": "2025-08-21",
+        "source": {
+        "owner": "에이바이미",
+        "type": "instagram_story",
+        "label": "에이바이미 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250821story.mp4" }]
+    },
+        {
+        "id": "250825_instagram_post",
+        "date": "2025-08-25",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_post",
+        "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간","Guitar_live"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250825post.mp4" }]
+    },
+    {
+        "id": "250814_instagram_story",
+        "date": "2025-08-14",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간","데카브리"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250814story.mp4" }]
+    },
+    {
+        "id": "250809_official_stage",
+        "date": "2025-08-09",
+        "source": {
+        "owner": "아떼오드",
+        "type": "official_stage",
+        "label": "뮤지컬 개와 고양이의 시간 막공사진"
+        },
+        "tags": ["개와_고양이의_시간"],
+        "images": ["/galleryimg/250809post7.jpg"]
+    },
+    {
+        "id": "250809_official_artist",
+        "date": "2025-08-09",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 개와 고양이의 시간 막공사진"
+        },
+        "tags": ["개와_고양이의_시간"],
+        "media": [
+            { "type": "image", "src": "/galleryimg/250809post1.jpg" },
+            { "type": "image", "src": "/galleryimg/250809post2.jpg" },
+            { "type": "image", "src": "/galleryimg/250809post3.jpg" },
+            { "type": "image", "src": "/galleryimg/250809post4.jpg" },
+            { "type": "image", "src": "/galleryimg/250809post5.jpg" },
+            { "type": "video", "src": "/galleryimg/250809post6.mp4" }]
+    },
+    {
+        "id": "250807_instagram_story",
+        "date": "2025-08-07",
+        "source": {
+        "owner": "유태율 배우님",
+        "type": "instagram_story",
+        "label": "유태율 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","개와_고양이의_시간"],
+        "images": ["/galleryimg/250807story.jpg"]
+    },
+    {
+        "id": "250805_official_stage",
+        "date": "2025-08-05",
+        "source": {
+        "owner": "쇼노트",
+        "type": "official_stage",
+        "label": "뮤지컬 데카브리 컨셉포토"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250805post.jpg"]
+    },
+    {
+        "id": "250804_official_stage",
+        "date": "2025-08-04",
+        "source": {
+        "owner": "쇼노트",
+        "type": "official_stage",
+        "label": "뮤지컬 데카브리 페어컷"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250804post.jpg"]
+    },
+    {
+        "id": "250730_instagram_story",
+        "date": "2025-07-30",
+        "source": {
+        "owner": "유태율 배우님",
+        "type": "instagram_story",
+        "label": "유태율 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250730story1.jpg"]
+    },
+    {
+        "id": "250730_instagram_story",
+        "date": "2025-07-30",
+        "source": {
+        "owner": "글림 아티스트",
+        "type": "instagram_story",
+        "label": "글림 아티스트 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250730story2.jpg"]
+    },
+    {
+        "id": "250729_official_stage",
+        "date": "2025-07-29",
+        "source": {
+        "owner": "낭만바리케이트",
+        "type": "official_stage",
+        "label": "뮤지컬 번 더 위치 공연 사진"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/250729post.jpg"]
+    },
+    {
+        "id": "250727_official_stage",
+        "date": "2025-07-27",
+        "source": {
+        "owner": "쇼노트",
+        "type": "official_stage",
+        "label": "쇼노트 막내즈 인스타그램 게시물"
+        },
+        "tags": ["데카브리"],
+        "images": ["/galleryimg/250727post.jpg"]
+    },
+    {
+        "id": "250720_instagram_story",
+        "date": "2025-07-20",
+        "source": {
+        "owner": "글림 아티스트",
+        "type": "instagram_story",
+        "label": "글림 아티스트 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250720story.jpg"]
+    },
+    {
+        "id": "250709_official_artist",
+        "date": "2025-07-09",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 번 더 위치 프로필 비하인드"
+        },
+        "tags": ["데카브리"],
+        "images": [
+            "/galleryimg/250709post5.jpg",
+            "/galleryimg/250709post6.jpg",
+            "/galleryimg/250709post7.jpg",
+            "/galleryimg/250709post8.jpg",
+            "/galleryimg/250709post9.jpg",
+            "/galleryimg/250709post10.jpg",
+            "/galleryimg/250709post11.jpg",
+            "/galleryimg/250709post12.jpg",
+            "/galleryimg/250709post13.jpg",
+            "/galleryimg/250709post14.jpg",
+            "/galleryimg/250709post15.jpg",
+            "/galleryimg/250709post16.jpg"
+        ]
+    },
+    {
+        "id": "250709_official_artist",
+        "date": "2025-07-09",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 번 더 위치 첫공사진"
+        },
+        "tags": ["번_더_위치"],
+        "images": [
+            "/galleryimg/250709post1.jpg",
+            "/galleryimg/250709post2.jpg",
+            "/galleryimg/250709post3.jpg",
+            "/galleryimg/250709post4.jpg"]
+    },
+    {
+        "id": "250708_official_stage",
+        "date": "2025-07-08",
+        "source": {
+        "owner": "낭만바리케이트",
+        "type": "official_stage",
+        "label": "뮤지컬 번 더 위치 첫공사진"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/250708post.jpg"]
+    },
+    {
+        "id": "250701_instgarm_post",
+        "date": "2025-07-01",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_post",
+        "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간"],
+        "images": ["/galleryimg/250701post1.jpg",
+            "/galleryimg/250701post2.jpg",
+            "/galleryimg/250701post3.jpg",
+            "/galleryimg/250701post4.jpg",
+            "/galleryimg/250701post5.jpg",
+            "/galleryimg/250701post6.jpg",
+            "/galleryimg/250701post7.jpg",
+            "/galleryimg/250701post8.jpg",
+            "/galleryimg/250701post9.jpg",
+            "/galleryimg/250701post10.jpg",
+            "/galleryimg/250701post11.jpg"
+        ]
+    },
+    {
+        "id": "250630_official_artist",
+        "date": "2025-06-30",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "드라마 미지의 서울 종영사진"
+        },
+        "tags": ["미지의_서울"],
+        "images": [
+            "/galleryimg/250630post1.jpg",
+            "/galleryimg/250630post2.jpg",
+            "/galleryimg/250630post3.jpg",
+            "/galleryimg/250630post4.jpg"]
+    },
+    {
+        "id": "250629_instagram_story",
+        "date": "2025-6-29",
+        "source": {
+        "owner": "박보영 배우님",
+        "type": "instagram_story",
+        "label": "박보영 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","미지의_서울"],
+        "images": ["/galleryimg/250629story.jpg"]
+    },
+    {
+        "id": "250626_instagram_story",
+        "date": "2025-06-26",
+        "source": {
+        "owner": "랑연 배우님",
+        "type": "instagram_story",
+        "label": "랑연 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","번_더_위치"],
+        "images": ["/galleryimg/250626story.jpg"]
+    },
+        {
+        "id": "250625_instagram_post",
+        "date": "2025-06-25",
+        "source": {
+        "owner": "에이바이미",
+        "type": "instagram_post",
+        "label": "에이바이미 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250625post.jpg"]
+    },
+    {
+        "id": "250624_instagram_story",
+        "date": "2025-06-24",
+        "source": {
+        "owner": "정연 배우님",
+        "type": "instagram_story",
+        "label": "정연 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","번_더_위치"],
+        "images": ["/galleryimg/250624story.jpg"]
+    },
+    {
+        "id": "250623_press",
+        "date": "2025-06-23",
+        "source": {
+        "owner": "오마이뉴스",
+        "type": "press",
+        "label": "오마이뉴스 기사사진"
+        },
+        "tags": ["개와_고양이의_시간"],
+        "images": ["/galleryimg/250623post.jpg"]
+    },
+    {
+        "id": "250620_instagram_story",
+        "date": "2025-06-20",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간","미지의_서울"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250620story.mp4" }]
+    },
+    {
+        "id": "250619_instagram_story",
+        "date": "2025-06-19",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간","미지의_서울"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250619story2.mp4" },
+            { "type": "video", "src": "/galleryimg/250619story3.mp4" }]
+    },
+    {
+        "id": "250619_official_drama",
+        "date": "2025-06-19",
+        "source": {
+        "owner": "샾잉",
+        "type": "official_drama",
+        "label": "샾잉 인스타그램 스토리"
+        },
+        "tags": ["미지의_서울"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250619story1.mp4" }]
+    },
+    {
+        "id": "250617_official_drama",
+        "date": "2025-06-17",
+        "source": {
+        "owner": "tnN",
+        "type": "official_drama",
+        "label": "드라마 미지의 서울 8화 비하인드스틸"
+        },
+        "tags": ["미지의_서울"],
+        "images": ["/galleryimg/250617post1.jpg",
+                "/galleryimg/250617post2.jpg",
+                "/galleryimg/250617post3.jpg",
+                "/galleryimg/250617post4.jpg"
+                ]
+    },
+    {
+        "id": "250616_official_stage",
+        "date": "2025-06-16",
+        "source": {
+        "owner": "낭만바리케이트",
+        "type": "official_stage",
+        "label": "뮤지컬 번 더 위치 캐릭터포스터"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/250616post1.jpg",
+            "/galleryimg/250616post2.jpg"]
+    },
+    {
+        "id": "250615_instagram_story",
+        "date": "2025-06-15",
+        "source": {
+        "owner": "유태율 배우님",
+        "type": "instagram_story",
+        "label": "유태율 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","개와_고양이의_시간"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250615story.mp4" }]
+    },
+    {
+        "id": "250613_instagram_story",
+        "date": "2025-06-13",
+        "source": {
+        "owner": "링연 배우님",
+        "type": "instagram_story",
+        "label": "랑연 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","번_더_위치"],
+        "images": ["/galleryimg/250613story.jpg"]
+    },
+    {
+        "id": "250611_instagram_story",
+        "date": "2025-06-11",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_story",
+        "label": "홍성원 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원한_순간","미지의_서울"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250611story.mp4" }]
+    },  
+    {
+        "id": "250608_instagram_story",
+        "date": "2025-06-08",
+        "source": {
+        "owner": "유태율 배우님",
+        "type": "instagram_story",
+        "label": "유태율 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간","개와_고양이의_시간"],
+        "media": [
+            { "type": "video", "src": "/galleryimg/250608story.mp4" }]
+    },
+    {
+        "id": "250530_instagram_story",
+        "date": "2025-05-30",
+        "source": {
+        "owner": "글림 아티스트",
+        "type": "instagram_story",
+        "label": "글림 아티스트 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250530story.jpg"]
+    },
+    {
+        "id": "250529_official_stage",
+        "date": "2025-05-29",
+        "source": {
+        "owner": "낭만바리케이트",
+        "type": "official_stage",
+        "label": "뮤지컬 번 더 위치 메인프로필"
+        },
+        "tags": ["번_더_위치"],
+        "images": ["/galleryimg/250529post1.jpg",
+            "/galleryimg/250529post2.jpg"]
+    },
+    {
+        "id": "250527_insagram_post",
+        "date": "2025-05-27",
+        "source": {
+        "owner": "최은영 배우님",
+        "type": "instagram_post",
+        "label": "최은영 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250527post1.jpg",
+                "/galleryimg/250527post1.jpg"]
+    },
+    {
+        "id": "250526_press",
+        "date": "2025-05-26",
+        "source": {
+        "owner": "혜전문",
+        "type": "press",
+        "label": "혜전문 포스트 사진"
+        },
+        "tags": ["개와_고양이의_시간"],
+        "images": ["/galleryimg/250526post1.jpg",
+            "/galleryimg/250526post2.jpg",
+            "/galleryimg/250526post3.jpg"    
+        ]
+    },
+    {
+        "id": "250526_post",
+        "date": "2025-05-26",
+        "source": {
+        "owner": "김려원 배우님",
+        "type": "post",
+        "label": "김려원 배우님 팬카페 게시물"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250526post.jpg"]
+    },
+    {
+        "id": "250525_insagram_post",
+        "date": "2025-05-25",
+        "source": {
+        "owner": "홍성원 배우님",
+        "type": "instagram_post",
+        "label": "홍성원 배우님 인스타그램 게시물"
+        },
+        "tags": ["성원한_순간","개와_고양이의_시간"],
+        "images": ["/galleryimg/250525post1.jpg",
+                "/galleryimg/250525post2.jpg",
+                "/galleryimg/250525post3.jpg"]
+    },
+    {
+        "id": "250524_instagram_story",
+        "date": "2025-05-24",
+        "source": {
+        "owner": "최은영 배우님",
+        "type": "instagram_story",
+        "label": "최은영 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250524story1.jpg"]
+    },
+    {
+        "id": "250524_instagram_story",
+        "date": "2025-05-24",
+        "source": {
+        "owner": "유태율 배우님",
+        "type": "instagram_story",
+        "label": "유태율 배우님 인스타그램 스토리"
+        },
+        "tags": ["성원해주신_순간"],
+        "images": ["/galleryimg/250524story2.jpg"]
+    },
+    {
+        "id": "2506523_official_artist",
+        "date": "2025-05-23",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "드라마 미지의 서울 첫방사진"
+        },
+        "tags": ["미지의_서울"],
+        "images": [
+            "/galleryimg/250523post1.jpg",
+            "/galleryimg/250523post2.jpg",
+            "/galleryimg/250523post3.jpg"]
+    }
+]

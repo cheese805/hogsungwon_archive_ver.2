@@ -1,0 +1,371 @@
+/* ==============================
+   FONT (네가 준 것 그대로)
+   ============================== */
+@font-face { font-family:'Pretendard'; font-weight:100; src:url('font/Pretendard-Thin.woff2') format('woff2'); }
+@font-face { font-family:'Pretendard'; font-weight:200; src:url('font/Pretendard-ExtraLight.woff2') format('woff2'); }
+@font-face { font-family:'Pretendard'; font-weight:300; src:url('font/Pretendard-Light.woff2') format('woff2'); }
+@font-face { font-family:'Pretendard'; font-weight:400; src:url('font/Pretendard-Medium.woff2') format('woff2'); }
+@font-face { font-family:'Griffiths'; src:url('font/Griffiths.woff2') format('woff2'); font-weight:normal; font-style:normal; }
+
+/* ==============================
+   RESET / BASE
+   ============================== */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  height:100%;
+  overflow:hidden;
+}
+body{
+  font-family:'Pretendard',sans-serif;
+  font-weight:200;
+  line-height:1.3;
+  color:#000000;
+  background:#fff; /* 단일 화면 = 흰 배경 */
+}
+
+/* ==============================
+   LAYOUT (스크롤 없음)
+   ============================== */
+.section{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start; /* 상단부터 */
+  padding-top:max(env(safe-area-inset-top), 8px);
+  position:relative;
+}
+
+/* ==============================
+   TITLE
+   ============================== */
+.title-container{
+  width: 100%;
+  max-width: 450px;
+  margin: 25px auto 40px;   /* ← 가운데 정렬 + 아래 간격 늘림 */
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: center;  /* 🔥 텍스트를 가로 중앙으로 */
+  align-items: center;
+  text-align: center;       /* 🔥 텍스트 정렬도 중앙 */
+}
+
+.title-container h1.title{
+  font-family: 'Griffiths', serif;
+  font-size: 2em;
+  font-weight: normal;
+  color: transparent;
+  -webkit-text-stroke: 0.5px #000;
+  letter-spacing: 1px;
+  flex-shrink: 0;                /* ← 눌려서 굵어지는 거 방지 */
+}
+
+
+/* ==============================
+   CONTENT (고정 높이/스크롤 없음)
+   ============================== */
+.info-wrap {
+  width: 90%;
+  max-width: 450px;
+  padding: 0 30px 10px;
+  text-align: center; 
+  margin-left: auto;   
+  margin-right: auto;  
+}
+
+
+.page-title{
+  font-weight:400;
+  font-size:1.5em;
+  line-height:1.35;
+  margin:4px 0 18px;
+}
+
+.info-text p{
+  font-size:1rem;
+  line-height:1.9;
+  color:#000000;
+  margin:0 0 10px;
+}
+
+/* 래퍼: 중앙정렬, 간격 관리 */
+/* 래퍼: 전폭 + 가운데 정렬 컨테이너 + 기준점 */
+.info-email-wrap{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* ← 박스만 중앙 */
+  align-items: center;
+  margin: 24px 0 84px;
+}
+
+/* 네모박스(메일 + 아이콘)만 중앙에 놓인다 */
+.info-email{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: 44px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  background: transparent;
+   overflow: visible; 
+   min-width: 280px;
+}
+
+/* input/아이콘은 투명 */
+.info-email input{
+  flex: 1;                 /* ← 핵심: 남은 공간을 전부 차지 */
+  min-width: 0;   
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #222;
+  padding-right: 10px;
+  height: 100%;
+  line-height: 44px;
+  width: auto;
+  text-align: left;
+}
+.info-email input:focus{ outline: none; }
+
+.info-email .copy-icon{
+  width: 28px; height: 28px;
+  border: 0; background: transparent; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.info-email .copy-icon img{ width: 18px; height: 18px; display: block; }
+
+/* 토스트: 박스 밖, 절대배치 → 가운데정렬에 영향 없음 */
+.copy-toast{
+  position: absolute;
+  top: calc(100% + 8px);     /* 네모박스 아래 8px */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #888;
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+
+
+/* ==============================
+   FOOTER (하단 고정 느낌)
+   ============================== */
+.info-footer{
+  position:absolute;
+  left:50%; bottom:22px;
+  transform:translateX(-50%);
+  font-size:11px; color:#b5b5b5;
+  pointer-events:none;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+/* ==============================
+   INFO: 모바일 최적화 (공통)
+   ============================== */
+#info-section .info-wrap{
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+
+#info-section .page-title{
+  font-weight: 400;
+  /* 화면폭에 따라 유연: 20px~28px */
+  font-size: clamp(20px, 5.6vw, 28px);
+  line-height: 1.35;
+  letter-spacing: .01em;
+  word-break: keep-all;   /* 한글 어절 기준 줄바꿈 */
+  text-wrap: balance;     /* 제목 줄 길이 균형(지원 브라우저에서) */
+  margin: 8px 0 18px;
+}
+
+#info-section .info-text{
+  max-width: 36rem;       /* 가독성 폭 제한 */
+  margin: 0 auto;
+}
+#info-section .info-text p{
+  /* 13px~15px 사이로 반응 */
+  font-size: clamp(13px, 3.6vw, 15px);
+  line-height: 1.9;
+  color: #444;
+  word-break: keep-all;
+  margin-bottom: 12px;
+}
+
+/* 메일 박스: 한 박스(입력+아이콘)만 중앙 */
+#info-section .info-email-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;      /* 가로 중앙 */
+  margin: 22px 0 64px;
+}
+
+#info-section .info-email{
+  position: relative;
+  display: inline-block;
+  height: 44px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  background: transparent;
+  padding: 0 12px;
+}
+
+#info-section .info-email > input{
+  display: block;
+  width: clamp(260px, 72vw, 340px); /* 폭 자동 + 최소/최대 가드 */
+  height: 44px;
+  line-height: 44px;
+  padding: 0 44px 0 14px;            /* 아이콘 자리 확보 */
+  border: 0; background: transparent;
+  font-size: 16px;                   /* iOS 확대 방지 */
+  color: #222;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+#info-section .info-email > input:focus{ outline: none; }
+
+#info-section .info-email > .copy-icon{
+  position: absolute;
+  top: 50%; right: 8px; transform: translateY(-50%);
+  width: 28px; height: 28px; padding: 0; border: 0; background: transparent;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 토스트는 박스 밖 중앙 아래에, 레이아웃 영향 없음 */
+#info-section .copy-toast{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%; transform: translateX(-50%);
+  font-size: 12px; color: #888;
+  opacity: 0; transition: opacity .2s ease; pointer-events: none;
+}
+
+
+/* ==============================
+   좌하단 고정 글로벌 메뉴
+   ============================== */
+
+.global-fab{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2500;
+  font-family:'Pretendard', sans-serif;
+}
+
+/* 동그란 버튼 */
+.global-fab-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: transparent;
+  background: #fff;
+  box-shadow: 0 0px 24px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 메뉴 아이콘 (이미지) */
+.global-fab-icon-img{
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* 팝업 패널 */
+.global-fab-panel{
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+  border: 1px solid #ececec;
+
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 110px; /* 🔥 가로폭 확 줄임 */
+  width: fit-content;
+}
+
+.global-fab.open .global-fab-panel{
+  display: flex;
+}
+
+.global-fab-panel a{
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color:#222;
+  padding: 2px 2px;
+}
+
+.global-fab-panel a:hover{
+  color:#000;
+}
+
+/* 모바일에서 버튼 위치 조금만 위로 */
+@media (max-width:480px){
+  .global-fab{
+    left: 14px;
+    bottom: 14px;
+  }
+}
+
+
+/* ==============================
+   480px 이하: 강제 <br> 숨기고 여백 타이트
+   ============================== */
+/* 공통: info 래퍼 폭 줄여서 줄바꿈 여유 확보 */
+#info-section .info-wrap{
+  max-width: 420px;   /* 필요하면 380~440px 사이에서 조절 */
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* 제목: 화면 줄어들수록 폰트만 줄이기 — <br>는 그대로 작동 */
+#info-section .page-title{
+  font-weight: 800;
+  font-size: clamp(20px, 5.2vw, 28px);  /* 데스크탑 28px, 모바일로 갈수록 20~24px대 */
+  line-height: 1.35;
+  white-space: normal;       /* <br> 정상 작동 */
+  word-break: keep-all;      /* 단어 중간 절단 금지(한글 ok) */
+}
+
+/* 본문: 폰트만 단계적으로 축소 */
+#info-section .info-text p{
+  font-size: clamp(13px, 3.6vw, 15px);
+  line-height: 1.9;
+  white-space: normal;       /* <br> 정상 작동 */
+  word-break: keep-all;
+}
+
+/* 480px 이하에서 한 번 더 줄이기(필요 시 숫자 조절) */
+@media (max-width: 480px){
+  #info-section .page-title{ font-size: clamp(18px, 5.0vw, 22px); }
+  #info-section .info-text p{ font-size: clamp(12px, 3.4vw, 14px); }
+}
+
+/* 360~400 아주 좁은 화면 보정 */
+@media (max-width: 400px){
+  #info-section .info-wrap{ max-width: 360px; padding: 0 16px; }
+  #info-section .page-title{ font-size: clamp(17px, 4.8vw, 20px); }
+  #info-section .info-text p{ font-size: 12.5px; }
+}

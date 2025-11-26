@@ -1,0 +1,591 @@
+/* ==============================
+   FONT (folder / info와 동일)
+   ============================== */
+@font-face {
+  font-family:'Pretendard';
+  font-weight:100;
+  src:url('font/Pretendard-Thin.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:200;
+  src:url('font/Pretendard-ExtraLight.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:300;
+  src:url('font/Pretendard-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Pretendard';
+  font-weight:400;
+  src:url('font/Pretendard-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family:'Griffiths';
+  src:url('font/Griffiths.woff2') format('woff2');
+  font-weight:normal;
+  font-style:normal;
+}
+
+/* ==============================
+   RESET / BASE
+   ============================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html,body{
+  height:100%;
+}
+body{
+  font-family:'Pretendard',sans-serif;
+  font-weight:200;
+  line-height:1.3;
+  color:#000;
+  background:#fff;
+}
+
+/* ==============================
+   LAYOUT (모바일 세로 기준)
+   ============================== */
+.schedule-page{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  position:relative;
+  padding-top:max(env(safe-area-inset-top), 8px);
+  padding-bottom:48px;
+}
+
+/* ==============================
+   TITLE
+   ============================== */
+.title-container{
+  display:flex;
+  align-items:center;
+  width:100%;
+  max-width:450px;
+  margin-top:25px;
+  margin-bottom:16px;
+  padding:0 30px;
+}
+
+.title-container h1.title{
+  font-family:'Griffiths',serif;
+  font-size:2em;
+  font-weight:normal;
+  color:transparent;
+  -webkit-text-stroke:0.5px #000;
+  letter-spacing:1px;
+}
+
+
+/* 왼쪽 이름은 스케줄 페이지에서는 숨김 */
+.side-name{
+  display:none;
+}
+
+.side-profile{
+  font-family:'Griffiths',serif;
+  font-size:2.1em;
+  font-weight:normal;
+  color:transparent;
+  -webkit-text-stroke:0.6px #000;
+  letter-spacing:1px;
+  flex-shrink:0;
+}
+
+.rail-line{
+  flex-grow:1;
+  border:none;
+  border-top:1px solid #c4c4c4;
+  margin-left:20px;
+  margin-top:6px;
+}
+
+/* ==============================
+   CALENDAR WRAPPER
+   ============================== */
+.calendar-container{
+  width:100%;
+  max-width:450px;
+  padding:22px 30px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* 월 제목 + 얇은 구분선 (11월 한 줄 느낌) */
+.calendar-header{
+  width:100%;
+  text-align:center;
+  margin-bottom:14px;
+  padding-bottom:6px;
+  border-bottom:1px solid #e0e0e0;
+  position:relative;
+}
+
+.calendar-header button{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  border:none;
+  background:transparent;
+  font-size:0.9rem;
+  color:#777;
+  padding:4px 6px;
+  cursor:pointer;
+}
+
+#prev-month{ left:0; }
+#next-month{ right:0; }
+
+#month-year{
+  font-size:1.05rem;
+  font-weight:300;
+}
+
+/* ==============================
+   CALENDAR TABLE
+   ============================== */
+/* 달력 레이아웃 고정 */
+.calendar {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-collapse: separate;
+  table-layout: fixed;      /* ← 셀 너비 고정 */
+  border-spacing: 6px 12px; /* ← 가로 6px / 세로 12px 고정 간격 */
+}
+
+
+.calendar thead th{
+  padding:6px 0;
+  font-weight:300;
+  color:#888;
+}
+
+.calendar tbody td{
+  height:40px;
+  padding:4px 0;
+  text-align:center;
+  vertical-align:top;
+  border-bottom:1px solid #f0f0f0;
+  position:relative;
+  font-size:0.8rem;
+}
+
+/* 날짜 숫자와 점 사이 간격 조금 */
+.calendar tbody td span.day-num{
+  display:block;
+}
+
+/* 이벤트 점 (JS에서 .dot 추가됨) */
+.dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  display:inline-block;
+  margin-top:3px;
+  margin-inline:1px;
+}
+
+/* 클릭 가능한 날짜 살짝 호버 */
+.calendar tbody td:hover{
+  background:#fafafa;
+}
+
+/* ==============================
+   EVENT POPUP (하단 카드)
+   ============================== */
+.event-box {
+  position: fixed;
+  left: 50%;
+  bottom: 100px;   /* ← 이 값을 키우면 위로 올라옴! */
+  transform: translateX(-50%);
+  width: min(360px, calc(100% - 40px));
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0px 30px rgba(0,0,0,0.1);
+  padding: 18px 20px 14px;
+  display: none;
+  z-index: 9999;
+}
+
+
+.event-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+#event-title{
+  font-size:0.9rem;
+  font-weight:400;
+}
+
+/* 닫기 버튼 (X) */
+#close-event{
+  width:16px;
+  height:16px;
+  border:none;
+  background:transparent;
+  position:relative;
+  cursor:pointer;
+}
+#close-event::before,
+#close-event::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:12px;
+  height:1px;
+  background:#666;
+}
+#close-event::before{
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+#close-event::after{
+  transform:translate(-50%,-50%) rotate(-45deg);
+}
+
+/* 이벤트 내용 */
+.event-content{
+  font-size:0.78rem;
+  color:#333;
+}
+
+.event-title{
+  font-size:0.9rem;
+  font-weight:400;
+  margin-bottom:4px;
+}
+
+.event-label{
+  display:inline-block;
+  width:52px;
+  font-weight:300;
+  color:#888;
+}
+
+.event-detail{
+  font-weight:300;
+}
+
+.event-content hr{
+  border:none;
+  border-top:1px solid #f0f0f0;
+  margin:10px 0;
+}
+
+/*======
+  button
+  =====*/
+  .month-header {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  /* 월 전환 버튼 (공통 박스) */
+.month-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* 아웃라인 L자 모양 한 줄만 사용 */
+.month-btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  border: 1.4px solid #000;   /* 테두리만 있는 네모 */
+  border-top: none;           /* 윗변 제거 */
+  border-left: none;          /* 왼쪽변 제거 → L자 */
+  background: transparent;
+  transform-origin: center;
+}
+
+/* ▶ 오른쪽 화살표 (기본 방향) */
+#next-month::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* ◀ 왼쪽 화살표 (반대 방향으로 회전) */
+#prev-month::before {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+/* 살짝 반응 */
+.month-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.month-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* ==============================
+   상단 고정 아이콘 / 메뉴 팝업
+   ============================== */
+.fixed-icons{
+  position:fixed;
+  right:16px;
+  top:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:11000;
+}
+
+.fixed-icons img{
+  width:26px;
+  height:26px;
+  display:block;
+}
+
+.menu-popup{
+  position:fixed;
+  top:52px;
+  right:16px;
+  padding:10px 16px;
+  background:rgba(255,255,255,0.96);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.16);
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  z-index:10999;
+}
+
+.menu-popup a{
+  font-size:0.78rem;
+  color:#333;
+  text-decoration:none;
+  padding:4px 0;
+}
+
+.menu-popup a:hover{
+  color:#000;
+}
+
+/* ==============================
+   하단 문구 (a fan-made page…)
+   ============================== */
+.page-footer{
+  position:absolute;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+  font-size:10px;
+  color:#b5b5b5;
+  letter-spacing:0.03em;
+  pointer-events:none;
+}
+
+/* ==============================
+   좌하단 고정 글로벌 메뉴
+   ============================== */
+
+.global-fab{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2500;
+  font-family:'Pretendard', sans-serif;
+}
+
+/* 동그란 버튼 */
+.global-fab-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: transparent;
+  background: #fff;
+  box-shadow: 0 0px 24px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 메뉴 아이콘 (이미지) */
+.global-fab-icon-img{
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* 팝업 패널 */
+.global-fab-panel{
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+  border: 1px solid #ececec;
+
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 110px; /* 🔥 가로폭 확 줄임 */
+  width: fit-content;
+}
+
+.global-fab.open .global-fab-panel{
+  display: flex;
+}
+
+.global-fab-panel a{
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color:#222;
+  padding: 2px 2px;
+}
+
+.global-fab-panel a:hover{
+  color:#000;
+}
+
+/* 모바일에서 버튼 위치 조금만 위로 */
+@media (max-width:480px){
+  .global-fab{
+    left: 14px;
+    bottom: 14px;
+  }
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+/* ------------------------------
+   480px 이하 (대부분의 모바일)
+-------------------------------- */
+@media (max-width: 480px) {
+
+  /* 타이틀 위 여백 & 패딩 줄임 */
+  .title-container {
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 14px;
+  }
+  .title-container h1.title {
+    font-size: 1.85em;   /* 조금 작게 */
+  }
+
+  /* 달력 래퍼 패딩 줄임 */
+  .calendar-container {
+    padding: 18px 20px 0;
+  }
+
+  /* 월 전환 버튼 줄임 */
+  .month-header {
+    gap: 14px;
+  }
+  .month-btn {
+    font-size: 1rem;
+    padding: 2px 6px;
+  }
+  .month-title {
+    font-size: 0.95rem;
+  }
+
+  /* 달력 칸 간격 그대로 유지하되 칸 높이만 소폭 감소 */
+  .calendar tbody td {
+    height: 48px !important;
+    font-size: 0.82rem;
+  }
+
+  /* 팝업 카드: 하단에서 더 떠있게 */
+  .event-box {
+    bottom: 70px;  /* ← 핵심: 모바일에서 자연스러운 높이 */
+    width: min(360px, calc(100% - 32px));
+    padding: 16px 18px 14px;
+  }
+
+  /* 팝업 텍스트 */
+  .event-content {
+    font-size: 0.82rem;
+  }
+
+  /* 하단 문구 */
+  .page-footer {
+    font-size: 10px;
+    bottom: 14px;
+  }
+}
+
+
+/* ------------------------------
+   400px 이하 (아이폰 SE, 작은 기기)
+-------------------------------- */
+@media (max-width: 400px) {
+
+  .title-container {
+    padding: 0 18px;
+  }
+  .title-container h1.title {
+    font-size: 1.65em;
+  }
+
+  .month-header {
+    gap: 12px;
+  }
+  .month-btn {
+    font-size: 0.9rem;
+  }
+  .month-title {
+    font-size: 0.9rem;
+  }
+
+  .calendar-container {
+    padding: 16px 18px 0;
+  }
+
+  .calendar tbody td {
+    height: 42px !important;
+    font-size: 0.75rem;
+  }
+
+  .event-box {
+    bottom: 60px; /* 화면이 작으므로 살짝 낮춰줌 */
+    width: min(330px, calc(100% - 24px));
+    padding: 14px 16px 12px;
+  }
+
+  .event-content {
+    font-size: 0.75rem;
+  }
+
+  .page-footer {
+    bottom: 12px;
+    font-size: 9px;
+  }
+}

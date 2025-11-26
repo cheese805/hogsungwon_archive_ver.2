@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Hongsungwon Archive</title>
+  <link rel="stylesheet" href="style/gallerystyle.css" />
+</head>
+<body>
+  <main class="gallery-page" id="gallery-page">
+
+    <!-- 상단 타이틀 -->
+    <header class="gallery-header">
+      <div class="title-container">
+        <h1 class="title">Gallery</h1>
+        <div class="title-line"></div>
+      </div>
+    </header>
+
+    <!-- 검색 / 태그 영역 -->
+    <section class="gallery-filter">
+      <div class="search-bar">
+        <img src="img/notice.png" alt="안내" class="search-notice-icon" />
+        <span class="hash-prefix">#</span>
+        <input
+          id="tag-input"
+          type="text"
+          placeholder="태그 검색"
+          aria-label="태그 검색"
+          autocomplete="off"
+        />
+        <button id="tag-search-btn" type="button" aria-label="검색">
+          <img src="img/search.png" alt="검색" class="search-icon" />
+        </button>
+      </div>
+
+      <div class="tag-chip-wrap">
+        <div class="tag-chip-row">
+          <button class="tag-chip" data-tag="성원한_순간">#성원한_순간</button>
+          <button class="tag-chip" data-tag="성원해주신_순간">#성원해주신_순간</button>
+        </div>
+        <div class="tag-chip-row">
+          <button class="tag-chip" data-tag="instagram_story">#instagram_story</button>
+          <button class="tag-chip" data-tag="2025">#2025</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 썸네일 그리드 (세트당 1칸) -->
+    <section class="gallery-grid" id="gallery-grid"></section>
+
+    <footer class="gallery-footer">
+      a fan-made page for Hongsungwon
+    </footer>
+
+  </main>
+    
+    <!-- 메뉴팝업 -->
+      <div class="global-fab">
+      <button class="global-fab-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="img/menu.png" class="global-fab-icon-img" alt="menu">
+      </button>
+
+      <nav class="global-fab-panel" aria-label="Main navigation">
+        <a href="index.html">Main</a>
+        <a href="profile.html">Profile</a>
+        <a href="archive.html">Archive</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="folder.html">Folder</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+
+    <!-- 상세 오버레이 -->
+    <div class="gallery-overlay" id="gallery-overlay" aria-hidden="true">
+    <div class="overlay-backdrop" id="overlay-backdrop"></div>
+    <div class="overlay-panel">
+        <button class="overlay-close" id="overlay-close" aria-label="닫기">
+        <img src="img/excite.png" alt="닫기 아이콘">
+        </button>
+
+        <div class="overlay-media" id="overlay-media"></div>
+
+        <div class="overlay-meta">
+        <p class="overlay-date" id="overlay-date"></p>
+        <p class="overlay-source" id="overlay-source"></p>
+        <p class="overlay-tags" id="overlay-tags"></p>
+        </div>
+    </div>
+    </div>
+    <div class="notice-overlay" id="notice-overlay" aria-hidden="true">
+  <div class="notice-backdrop"></div>
+
+  <div class="notice-dialog">
+    <button class="notice-close" type="button" aria-label="닫기">
+      <img src="img/excit.png" alt="닫기">
+    </button>
+
+    <div class="notice-text">
+      <p>본 페이지의 모든 사진은<br>
+      비영리적 기록 목적으로만 사용됩니다.</p>
+      <p>원하실 경우 언제든지 삭제 요청해주세요.<br>
+      확인 즉시 조치하겠습니다.</p>
+    </div>
+
+   <button class="notice-mail-row" type="button">
+      <img src="img/copy.png" class="notice-mail-icon" alt="copy">
+      <span class="notice-mail-text">hswarchive0124@gmail.com</span>
+    </button>
+  </div>
+</div>
+
+
+  <script src="script/galleryscript.js"></script>
+</body>
+</html>
