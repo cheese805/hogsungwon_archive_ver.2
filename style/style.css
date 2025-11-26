@@ -28,15 +28,18 @@ body, html {
 #fullpage-wrapper {
   position: relative;
   width: 100%;
-  height: 100svh;          /* 모바일 주소창 변화 덜 타게 */
+  height: 100svh;          /* 모바일 주소창 변동 덜 타게 */
   overflow-y: auto;        /* scroll → auto */
-  scroll-behavior: smooth;
+
+  scroll-behavior: auto;
+
+  /* 스크롤바 숨기기 */
   scrollbar-width: none;   /* Firefox */
   -ms-overflow-style: none;/* IE/old Edge */
 }
+
 #fullpage-wrapper::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
+  display: none;
 }
 
 /* ===========================
@@ -44,7 +47,7 @@ body, html {
    =========================== */
 .section {
   width: 100%;
-  height: 100svh;          /* 100vh → 100svh */
+  height: 100svh;          /* 100vh → 100svh (모바일 최적화) */
   position: relative;
   box-sizing: border-box;
 
@@ -55,7 +58,6 @@ body, html {
   text-align: center;
 
   padding: 0;
-  /* scroll-snap-align: start;  ← 삭제 */
 }
 
 /* =========================== */
