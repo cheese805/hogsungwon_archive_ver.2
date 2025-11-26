@@ -509,10 +509,10 @@ body{
 .expanded-card {
   position: relative;
 
-  /* ✅ 카드 최대 가로폭 통일 (모바일/PC 공통) */
+
   width: min(420px, calc(100% - 40px));
 
-  /* ✅ 화면 안에서만 스크롤되도록 */
+
   max-height: calc(100vh - 48px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -875,13 +875,13 @@ body{
   }
 
   .lightbox-arrow{
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
   }
 
   .lightbox-arrow img{
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
   }
 
   .left-arrow{ left: 6px; }
