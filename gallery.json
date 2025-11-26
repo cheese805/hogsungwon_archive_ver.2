@@ -247,7 +247,7 @@
         },
         "tags": ["성원한_순간"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250910story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250910story.mp4","thumbnail": "galleryimg/250910story-thumb.jpg" }]
     },
     {
         "id": "250910_instagram_post",
@@ -259,7 +259,7 @@
         },
         "tags": ["성원한_순간","Guitar_live"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250910post.mp4" }]
+            { "type": "video", "src": "/galleryimg/250910post.mp4","thumbnail": "galleryimg/250910post-thumb.jpg" }]
     },
     {
         "id": "250903_instagram_post",
@@ -271,7 +271,7 @@
         },
         "tags": ["성원한_순간","Guitar_live"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250903post.mp4" }]
+            { "type": "video", "src": "/galleryimg/250903post.mp4","thumbnail": "galleryimg/250903post-thumb.jpg" }]
     },
     {
         "id": "250903_official_stage",
@@ -294,7 +294,7 @@
         },
         "tags": ["성원한_순간","데카브리"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250901story1.mp4" },
+            { "type": "video", "src": "/galleryimg/250901story1.mp4","thumbnail": "galleryimg/250901story1-thumb.jpg" },
             { "type": "video", "src": "/galleryimg/250901story2.mp4" },
             { "type": "video", "src": "/galleryimg/250901story3.mp4" }]
     },
@@ -319,7 +319,7 @@
         },
         "tags": ["성원해주신_순간"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250821story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250821story.mp4","thumbnail": "galleryimg/250821story-thumb.jpg" }]
     },
         {
         "id": "250825_instagram_post",
@@ -331,7 +331,7 @@
         },
         "tags": ["성원한_순간","Guitar_live"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250825post.mp4" }]
+            { "type": "video", "src": "/galleryimg/250825post.mp4","thumbnail": "galleryimg/250825post-thumb.jpg" }]
     },
     {
         "id": "250814_instagram_story",
@@ -343,7 +343,7 @@
         },
         "tags": ["성원한_순간","데카브리"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250814story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250814story.mp4","thumbnail": "galleryimg/250814story-thumb.jpg" }]
     },
     {
         "id": "250809_official_stage",
@@ -613,7 +613,7 @@
         },
         "tags": ["성원한_순간","미지의_서울"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250620story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250620story.mp4","thumbnail": "galleryimg/250620story-thumb.jpg" }]
     },
     {
         "id": "250619_instagram_story",
@@ -625,7 +625,7 @@
         },
         "tags": ["성원한_순간","미지의_서울"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250619story2.mp4" },
+            { "type": "video", "src": "/galleryimg/250619story2.mp4","thumbnail": "galleryimg/250619story2-thumb.jpg" },
             { "type": "video", "src": "/galleryimg/250619story3.mp4" }]
     },
     {
@@ -638,7 +638,7 @@
         },
         "tags": ["미지의_서울"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250619story1.mp4" }]
+            { "type": "video", "src": "/galleryimg/250619story1.mp4","thumbnail": "galleryimg/250619story1-thumb.jpg" }]
     },
     {
         "id": "250617_official_drama",
@@ -677,7 +677,7 @@
         },
         "tags": ["성원해주신_순간","개와_고양이의_시간"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250615story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250615story.mp4","thumbnail": "galleryimg/250615story-thumb.jpg" }]
     },
     {
         "id": "250613_instagram_story",
@@ -700,7 +700,7 @@
         },
         "tags": ["성원한_순간","미지의_서울"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250611story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250611story.mp4","thumbnail": "galleryimg/250611story-thumb.jpg" }]
     },  
     {
         "id": "250608_instagram_story",
@@ -712,7 +712,7 @@
         },
         "tags": ["성원해주신_순간","개와_고양이의_시간"],
         "media": [
-            { "type": "video", "src": "/galleryimg/250608story.mp4" }]
+            { "type": "video", "src": "/galleryimg/250608story.mp4","thumbnail": "galleryimg/250608story-thumb.jpg" }]
     },
     {
         "id": "250530_instagram_story",
