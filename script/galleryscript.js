@@ -1,5 +1,8 @@
 // script/galleryscript.js
 
+// 🔥 백엔드(Render) 주소
+const SERVER_ORIGIN = "https://hongsungwon-gallery-server.onrender.com";
+
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      0. 기본 셋업 + JSON 경로
@@ -21,8 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (oldPanel) oldPanel.remove();
   }
 
-  // 현재 페이지 기준으로 gallery.json 절대주소 계산
-  const dataUrl = new URL("gallery.json", window.location.href).toString();
+  // 🔥 API_BASE를 Render 주소로
+  const API_BASE = SERVER_ORIGIN;
+  const dataUrl  = `${API_BASE}/api/gallery`;
 
   let entries       = [];
   let activeTag     = null;
@@ -44,36 +48,51 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
-      console.log("✅ gallery.json 로드 성공:", data);
-      entries = data;
+      // 🔥 날짜 기준 최신순 정렬
+      data.sort((a, b) => {
+        const da = new Date(a.date);
+        const db = new Date(b.date);
+        return db - da;
+      });
 
-      buildGlobalTagList();  // 전체 태그 리스트 만들기
+      console.log("✅ API 로드 성공 (정렬 후):", data);
+
+      entries = data;
+      buildGlobalTagList();
       renderGrid();
     })
     .catch(err => {
-      console.error("❌ 갤러리 데이터 로드 실패:", err);
-      if (grid) {
-        grid.innerHTML =
-          "<p style='font-size:0.8rem;color:#aaa;'>갤러리 데이터를 불러올 수 없어요.</p>";
-      }
+      console.error("❌ 데이터 로드 실패:", err);
     });
 
   /* =========================
      2. 유틸 함수들
      ========================= */
 
-  // "/galleryimg/xxx.jpg" → "galleryimg/xxx.jpg"
   function normalizePath(path) {
     if (!path) return "";
+
+    // 이미 http(s)면 그대로 사용
+    if (/^https?:\/\//i.test(path)) {
+      return path;
+    }
+
+    // 🔥 Render 서버 uploads 경로
+    if (path.startsWith("/uploads/")) {
+      return SERVER_ORIGIN + path;        // https://.../uploads/abc.jpg
+    }
+    if (path.startsWith("uploads/")) {
+      return SERVER_ORIGIN + "/" + path;  // https://.../uploads/abc.jpg
+    }
+
+    // 그 외 (galleryimg/xxxx 등)은 프론트 쪽 상대 경로
     return path.replace(/^\//, "");
   }
 
   function getFirstMedia(entry) {
-    // 1순위: images 배열
     if (entry.images && entry.images.length > 0) {
       return { type: "image", src: entry.images[0] };
     }
-    // 2순위: media 배열 (image → video)
     if (entry.media && entry.media.length > 0) {
       const img = entry.media.find(m => m.type === "image");
       if (img) return img;
@@ -90,38 +109,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${y}. ${m}. ${d}`;
   }
 
-  // 이 엔트리에서 검색/필터용 태그들 전부 뽑기:
-  // - JSON tags
-  // - 날짜 연도 (예: "2025")
-  // - source.type (예: "official_stage", "instagram_story")
   function getAllTags(entry) {
     const set = new Set();
 
-    // JSON에서 온 기본 태그들
     (entry.tags || []).forEach(t => {
       if (t) set.add(String(t));
     });
 
-    // 연도
     if (entry.date && entry.date.length >= 4) {
-      set.add(entry.date.slice(0, 4)); // "2025"
+      set.add(entry.date.slice(0, 4));
     }
 
-    // type (official_stage, instagram_story 등)
     if (entry.source && entry.source.type) {
       set.add(entry.source.type);
     }
 
-    return Array.from(set); // ["성원한_순간","2025","official_stage", ...]
+    return Array.from(set);
   }
 
-  // 상세 카드 아래 회색 태그 라인
   function buildTagLine(entry) {
     const all = getAllTags(entry);
     return all.map(t => `#${t}`).join(" ");
   }
 
-  // 전체 엔트리에서 태그 하나로 모아서 리스트 만들기
   function buildGlobalTagList() {
     const set = new Set();
 
@@ -131,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // 정렬 (한글/영문 섞여도 자연스럽게)
     allTagList = Array.from(set).sort((a, b) =>
       a.localeCompare(b, "ko-KR")
     );
@@ -141,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
      TAG 자동완성 드롭다운
      ========================= */
 
-  // 검색창 아래에 추천 박스 DOM 만들기
   (function setupTagSuggestBox() {
     const searchBar = document.querySelector(".search-bar");
     if (!searchBar) return;
@@ -149,8 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
     tagSuggestBox = document.createElement("div");
     tagSuggestBox.className = "tag-suggest";
     tagSuggestBox.innerHTML = `<div class="tag-suggest-list"></div>`;
-
-    // 검색바 바로 아래에 삽입
     searchBar.insertAdjacentElement("afterend", tagSuggestBox);
   })();
 
@@ -194,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tagSuggestBox.classList.add("open");
 
-    // 클릭 시 입력창에 넣고 필터 적용
     listEl.querySelectorAll(".tag-suggest-item").forEach(btn => {
       btn.addEventListener("click", () => {
         const t = btn.dataset.tag || "";
@@ -214,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filtered = entries.filter(entry => {
       if (!activeTag) return true;
-
       const allTags = getAllTags(entry);
       return allTags.includes(activeTag);
     });
@@ -239,14 +243,10 @@ document.addEventListener("DOMContentLoaded", () => {
         video.playsInline = true;
         video.preload = "metadata";
         video.className = "gallery-video-thumb";
-        const thumb = hero.thumbnail || "img/video-thumb-default.jpg";
-        video.setAttribute("poster", normalizePath(thumb));
         item.appendChild(video);
       }
 
-      // 썸네일 클릭 → 상세 카드
       item.addEventListener("click", () => openDetailCard(entry));
-
       grid.appendChild(item);
     });
   }
@@ -276,10 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function openDetailCard(entry) {
     if (!overlayRoot) return;
 
-    // 1) 이미지 + 비디오 모두 한 리스트로 합치기
     const mediaList = [];
 
-    // images 배열 → 전부 image 타입으로
     if (entry.images && entry.images.length > 0) {
       entry.images.forEach(src => {
         if (src) {
@@ -291,7 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // media 배열 → type, src/url 그대로
     if (entry.media && entry.media.length > 0) {
       entry.media.forEach(m => {
         if (!m) return;
@@ -304,10 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 보여줄 게 하나도 없으면 종료
     if (!mediaList.length) return;
 
-    // 이전 카드 제거
     if (openedWrapper) {
       openedWrapper.remove();
       openedWrapper = null;
@@ -364,7 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const leftBtn        = wrapper.querySelector(".left-arrow");
     const rightBtn       = wrapper.querySelector(".right-arrow");
 
-    // mediaList[index]를 실제 DOM으로 렌더링
     function renderMediaDetail() {
       const item = mediaList[index];
       if (!item) return;
@@ -410,11 +404,9 @@ document.addEventListener("DOMContentLoaded", () => {
       updateArrows();
     }
 
-    // 초기 렌더
     renderMediaDetail();
     updateArrows();
 
-    // 화살표
     if (leftBtn) {
       leftBtn.onclick = () => {
         if (index > 0) goTo(index - 1);
@@ -426,7 +418,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    // 닫기
     if (closeBtn) {
       closeBtn.addEventListener("click", closeDetailCard);
     }
@@ -448,7 +439,6 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================= */
 
   function applyFilter(tagText) {
-    // 사용자가 # 붙여서 쳐도 처리되게 앞의 # 제거
     const cleaned = (tagText || "").trim().replace(/^#/, "");
     activeTag = cleaned || null;
 
@@ -457,18 +447,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     renderGrid();
-    hideTagSuggestions();   // 검색 실행 시 드롭다운 닫기
+    hideTagSuggestions();
   }
 
   tagButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const tag = btn.dataset.tag; // "성원한_순간", "instagram_story", "2025" 등
+      const tag = btn.dataset.tag;
 
       if (activeTag === tag) {
         tagInput.value = "";
         applyFilter("");
       } else {
-        // 검색창에는 # 안 붙이고 순수 태그만
         tagInput.value = tag;
         applyFilter(tag);
       }
@@ -480,17 +469,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (tagInput) {
-    // 포커스만 해도 전체 태그 보여주기
     tagInput.addEventListener("focus", () => {
       showTagSuggestions(tagInput.value);
     });
 
-    // 타이핑 할 때마다 자동완성 갱신
     tagInput.addEventListener("input", () => {
       showTagSuggestions(tagInput.value);
     });
 
-    // Enter → 필터 적용
     tagInput.addEventListener("keydown", e => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -499,7 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 인풋/추천 영역 밖을 클릭하면 드롭다운 닫기
   document.addEventListener("click", (e) => {
     if (!tagSuggestBox) return;
     if (
@@ -512,119 +497,116 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  /* =========================
-     7. NOTICE 팝업
-     ========================= */
+/* =========================
+   7. NOTICE 팝업
+   ========================= */
 
-  const noticeIcon    = document.querySelector(".search-notice-icon");
-  const noticeOverlay = document.getElementById("notice-overlay");
-  const noticeClose   = noticeOverlay
-    ? noticeOverlay.querySelector(".notice-close")
-    : null;
-  const noticeBackdrop = noticeOverlay
-    ? noticeOverlay.querySelector(".notice-backdrop")
-    : null;
-  const noticeMailRow = noticeOverlay
-    ? noticeOverlay.querySelector(".notice-mail-row")
-    : null;
+const noticeIcon    = document.querySelector(".search-notice-icon");
+const noticeOverlay = document.getElementById("notice-overlay");
+const noticeClose   = noticeOverlay
+  ? noticeOverlay.querySelector(".notice-close")
+  : null;
+const noticeBackdrop = noticeOverlay
+  ? noticeOverlay.querySelector(".notice-backdrop")
+  : null;
+const noticeMailRow = noticeOverlay
+  ? noticeOverlay.querySelector(".notice-mail-row")
+  : null;
 
-  function openNotice(){
-    if (!noticeOverlay) return;
-    noticeOverlay.classList.add("active");
-    noticeOverlay.setAttribute("aria-hidden", "false");
+function openNotice(){
+  if (!noticeOverlay) return;
+  noticeOverlay.classList.add("active");
+  noticeOverlay.setAttribute("aria-hidden", "false");
+}
+
+function closeNotice(){
+  if (!noticeOverlay) return;
+  noticeOverlay.classList.remove("active");
+  noticeOverlay.setAttribute("aria-hidden", "true");
+}
+
+if (noticeIcon){
+  noticeIcon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openNotice();
+  });
+}
+
+if (noticeClose){
+  noticeClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeNotice();
+  });
+}
+
+if (noticeBackdrop){
+  noticeBackdrop.addEventListener("click", () => {
+    closeNotice();
+  });
+}
+
+// ESC로 닫기
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && noticeOverlay &&
+      noticeOverlay.classList.contains("active")){
+    closeNotice();
   }
+});
 
-  function closeNotice(){
-    if (!noticeOverlay) return;
-    noticeOverlay.classList.remove("active");
-    noticeOverlay.setAttribute("aria-hidden", "true");
-  }
-
-  if (noticeIcon){
-    noticeIcon.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openNotice();
-    });
-  }
-
-  if (noticeClose){
-    noticeClose.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeNotice();
-    });
-  }
-
-  if (noticeBackdrop){
-    noticeBackdrop.addEventListener("click", () => {
-      closeNotice();
-    });
-  }
-
-  // ESC로 닫기
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && noticeOverlay &&
-        noticeOverlay.classList.contains("active")){
-      closeNotice();
+// 메일 클릭 시 복사
+if (noticeMailRow){
+  noticeMailRow.addEventListener("click", async () => {
+    const mail = "hswarchive0124@gmail.com";
+    try{
+      await navigator.clipboard.writeText(mail);
+      alert("메일 주소가 복사되었습니다.");
+    }catch(err){
+      console.error("메일 복사 실패:", err);
+      alert(mail + " 로 메일을 보내주세요.");
     }
   });
+}
 
-  // 메일 클릭 시 복사
-  if (noticeMailRow){
-    noticeMailRow.addEventListener("click", async () => {
-      const mail = "hswarchive0124@gmail.com";
-      try{
-        await navigator.clipboard.writeText(mail);
-        alert("메일 주소가 복사되었습니다.");
-      }catch(err){
-        console.error("메일 복사 실패:", err);
-        alert(mail + " 로 메일을 보내주세요.");
-      }
-    });
-  }
+/* =========================
+   6. 좌하단 글로벌 메뉴 버튼
+   ========================= */
 
+const fabRoot   = document.querySelector(".global-fab");
+const fabBtn    = fabRoot ? fabRoot.querySelector(".global-fab-btn")   : null;
+const fabPanel  = fabRoot ? fabRoot.querySelector(".global-fab-panel") : null;
 
-  /* =========================
-     6. 좌하단 글로벌 메뉴 버튼
-     ========================= */
+function closeFab(){
+  if (!fabRoot || !fabBtn) return;
+  fabRoot.classList.remove("open");
+  fabBtn.setAttribute("aria-expanded", "false");
+}
 
-  const fabRoot   = document.querySelector(".global-fab");
-  const fabBtn    = fabRoot ? fabRoot.querySelector(".global-fab-btn")   : null;
-  const fabPanel  = fabRoot ? fabRoot.querySelector(".global-fab-panel") : null;
+function toggleFab(){
+  if (!fabRoot || !fabBtn) return;
+  const willOpen = !fabRoot.classList.contains("open");
+  fabRoot.classList.toggle("open", willOpen);
+  fabBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
 
-  function closeFab(){
-    if (!fabRoot || !fabBtn) return;
-    fabRoot.classList.remove("open");
-    fabBtn.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleFab(){
-    if (!fabRoot || !fabBtn) return;
-    const willOpen = !fabRoot.classList.contains("open");
-    fabRoot.classList.toggle("open", willOpen);
-    fabBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
-  }
-
-  if (fabBtn){
-    fabBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleFab();
-    });
-  }
-
-  // 화면 다른 곳 클릭 시 닫기 (갤러리 오버레이랑 별개)
-  document.addEventListener("click", (e) => {
-    if (!fabRoot || !fabPanel || !fabBtn) return;
-    if (fabRoot.contains(e.target)) return; // 메뉴 내부 클릭이면 유지
-    closeFab();
+if (fabBtn){
+  fabBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleFab();
   });
+}
 
-  // ESC로 닫기 (갤러리 상세 오버레이 우선, 그 다음 메뉴)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape"){
-      // 상세 오버레이가 이미 처리하고 있으면 그쪽에 맡기고,
-      // 메뉴만 열려 있는 상황이면 여기서 닫힘
-      if (fabRoot && fabRoot.classList.contains("open")){
-        closeFab();
-      }
+// 화면 다른 곳 클릭 시 닫기 (갤러리 오버레이랑 별개)
+document.addEventListener("click", (e) => {
+  if (!fabRoot || !fabPanel || !fabBtn) return;
+  if (fabRoot.contains(e.target)) return;
+  closeFab();
+});
+
+// ESC로 닫기 (갤러리 상세 오버레이 우선, 그 다음 메뉴)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape"){
+    if (fabRoot && fabRoot.classList.contains("open")){
+      closeFab();
     }
-  });
+  }
+});
