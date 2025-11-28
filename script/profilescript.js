@@ -63,6 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 휠/트랙패드
   window.addEventListener('wheel', (e) => {
+    // ★ 필모그래피 안에서는 풀페이지 스냅 아예 막기
+    const filmBox = e.target.closest('.filmography-container');
+    if (filmBox) {
+      // 이 안에서는 그냥 기본 브라우저 스크롤만 쓰기
+      return;
+    }
+
     if (isSnapping) { e.preventDefault(); return; }
     if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return;
 
@@ -78,17 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: false });
 
-  // 터치 스와이프
-  let touchStartY = 0, touchStartTarget = null;
-  window.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-    touchStartTarget = e.target;
-  }, { passive: true });
 
-  window.addEventListener('touchend', (e) => {
+  // 터치 스와이프
+    window.addEventListener('touchend', (e) => {
     if (isSnapping) return;
     const deltaY = touchStartY - e.changedTouches[0].clientY;
     if (Math.abs(deltaY) < TOUCH_THRESHOLD) return;
+
+    // ★ 터치 시작 지점이 필모그래피 안이면, 내부 스크롤만 허용
+    if (touchStartTarget && touchStartTarget.closest('.filmography-container')) {
+      return;
+    }
 
     if (canScrollInside(touchStartTarget, deltaY)) return;
 
@@ -96,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (deltaY > 0 && idx < sections.length - 1) snapTo(idx + 1);
     else if (deltaY < 0 && idx > 0)             snapTo(idx - 1);
   }, { passive: true });
+
 
   // 리사이즈 시 현재 섹션으로 다시 스냅
   window.addEventListener('resize', () => {
