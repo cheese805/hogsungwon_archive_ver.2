@@ -5,13 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections  = [...document.querySelectorAll('.section')];
   const triggers  = document.querySelectorAll('[data-next-section]');
 
-  // 내부 스크롤 가능한 요소 감지
-  const isScrollable = (el) => {
+    const isScrollable = (el) => {
     if (!el) return false;
+
+    const hasScroll = el.scrollHeight - el.clientHeight > 1;
+
+    if (el.classList && el.classList.contains('filmography-container')) {
+      return hasScroll;
+    }
+
     const style = getComputedStyle(el);
     const oy = style.overflowY;
-    return (oy === 'auto' || oy === 'scroll') && el.scrollHeight > el.clientHeight;
+
+    return (oy === 'auto' || oy === 'scroll' || oy === 'overlay') && hasScroll;
   };
+
 
   const WHEEL_THRESHOLD = 30;
   const TOUCH_THRESHOLD = 60;
