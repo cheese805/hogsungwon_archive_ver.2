@@ -29,20 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { isSnapping = false; }, SNAP_LOCK_MS);
   };
 
-  const canScrollInside = (startEl, deltaY) => {
-    let el = startEl;
-    while (el && el !== wrapper && el !== document.body) {
-      if (isScrollable(el)) {
-        const atTop    = el.scrollTop <= 0;
-        const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
-        if (deltaY > 0 && !atBottom) return true;
-        if (deltaY < 0 && !atTop)    return true;
-        return false;
+    const canScrollInside = (startEl, deltaY) => {
+      const filmographyBox = document.querySelector('.filmography-container');
+  
+      let el = startEl;
+  
+      if (filmographyBox && filmographyBox.contains(startEl)) {
+        el = filmographyBox;
       }
-      el = el.parentElement;
-    }
-    return false;
-  };
+  
+      while (el && el !== wrapper && el !== document.body) {
+        if (isScrollable(el)) {
+          const atTop    = el.scrollTop <= 0;
+          const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+  
+          if (deltaY > 0 && !atBottom) return true; // 아래로 더 스크롤 가능
+          if (deltaY < 0 && !atTop)    return true; // 위로 더 스크롤 가능
+  
+          // 이미 위/아래 끝까지 온 상태 → 이제 섹션 스냅 허용
+          return false;
+        }
+        el = el.parentElement;
+      }
+      return false;
+    };
+
 
   // 버튼으로 섹션 이동
   triggers.forEach(btn => {
