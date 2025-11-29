@@ -44,22 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   };
 
-  // 버튼으로 섹션 이동
-  triggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (isSnapping) return;
-      const idx = indexByScroll();
-
-      if (btn.id === 'scroll-to-filmography') {
-        snapTo(idx + 1);
-      } else if (btn.id === 'scroll-to-profile') {
-        snapTo(idx - 1);
-      } else {
-        snapTo(idx + 1);
-      }
-    });
-  });
 
   // 휠/트랙패드
   window.addEventListener('wheel', (e) => {
