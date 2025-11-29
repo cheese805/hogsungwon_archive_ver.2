@@ -1,5 +1,53 @@
 [
     {
+        "id": "251129_official_stage",
+        "date": "2025-11-29",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 첫공페어컷"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251129post1.jpg",
+        "/galleryimg/251129post2.jpg"]
+    },
+    {
+        "id": "251127_official_artist",
+        "date": "2025-11-27",
+        "source": {
+        "owner": "글림아티스트",
+        "type": "official_artist",
+        "label": "뮤지컬 캐빈 첫공사진"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251127post4.jpg",
+        "/galleryimg/251127post5.jpg",
+        "/galleryimg/251127post6.jpg"]
+    },
+    {
+        "id": "251127_official_stage",
+        "date": "2025-11-27",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 첫공페어컷"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251127post2.jpg",
+        "/galleryimg/251127post3.jpg"]
+    },
+    {
+        "id": "251127_official_stage",
+        "date": "2025-11-27",
+        "source": {
+        "owner": "이모셔널시어터",
+        "type": "official_stage",
+        "label": "뮤지컬 캐빈 캐릭터 포스터"
+        },
+        "tags": ["캐빈"],
+        "images": ["/galleryimg/251127post1.jpg"]
+    },
+    {
         "id": "251124_official_stage",
         "date": "2025-11-24",
         "source": {
